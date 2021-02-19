@@ -5,6 +5,7 @@
 body {
   height: 100vh;
   margin: 0;
+  background-color: white;
 }
 .grid-wrapper {
   height: 100vh;
@@ -22,6 +23,7 @@ body {
   justify-content: center;
   height: 600px;
   width: 600px;
+  background-color: white;
 }
 
 .grid div {
@@ -32,19 +34,13 @@ body {
 }
 
 .grid div.frog {
-  background-image: url('../assets/cat.png');
+  background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
 }
 
-
-.grid div.cat {
-  background-image: url('../assets/cat.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: pointer;
-}
+/*
 .obstacles {
 
 }
@@ -60,3 +56,4 @@ body {
 .safetypads {
   
 }
+*/
