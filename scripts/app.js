@@ -1,8 +1,9 @@
 function init() {
   const grid = document.querySelector('.grid') // grab grid
   
-  const width = 10 // grid size
-  const height = 20
+  const width = 20 // grid size
+  const height = 23
+  
   const cellCount = width * height // number of cells
   const cells = []
   // console.log('Grid>>>', grid)
@@ -51,7 +52,7 @@ function init() {
     } else if (key === 40 /*down*/ && frogCurrentPosition + width <= width * height - 1) {
       frogCurrentPosition += width
     } else {
-      console.log('INVALID KEY')
+      console.log('Illegal move')
     }
     
     // 3. add cat to new position
