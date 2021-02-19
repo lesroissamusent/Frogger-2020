@@ -1,16 +1,16 @@
 function init() {
   const grid = document.querySelector('.grid') // grab grid
   
-  const width = 20 // grid size
+  const width = 20// grid size
   const height = 23
-  
+
   const cellCount = width * height // number of cells
   const cells = []
   // console.log('Grid>>>', grid)
 
   const frogClass = 'frog'
-  const frogStartPosition = 0
-  let frogCurrentPosition = 0
+  const frogStartPosition = 449
+  let frogCurrentPosition = 449
 
   // * Make a grid
   function createGrid() {
@@ -29,7 +29,7 @@ function init() {
     cells[position].classList.add(frogClass) //add css Frog class
   }
 
-  // * Remove Frog from the grid --> so that you don't get a bunch of cats on the screen evertime you try to move it.
+  // * Remove Frog from the grid --> so that you don't get a bunch of frogs on the screen evertime you try to move it.
   function removeFrog(position) { 
     cells[position].classList.remove(frogClass)
   }
@@ -39,10 +39,10 @@ function init() {
   function handleKeyDown(event) {
     const key = event.keyCode // recognises that you are pressing keys and which key it is
 
-    removeFrog(frogCurrentPosition) // 1. remove cat
+    removeFrog(frogCurrentPosition) // 1. remove frog
 
 
-    // 2. check  what key has been pressed to decide where cat should go
+    // 2. check  what key has been pressed to decide where frog should go
     if (key === 39 /*right*/ && frogCurrentPosition % width !== width - 1) { 
       frogCurrentPosition++
     } else if (key === 37 /*left*/&& frogCurrentPosition % width !== 0) {
@@ -55,7 +55,7 @@ function init() {
       console.log('Illegal move')
     }
     
-    // 3. add cat to new position
+    // 3. add frog to new position
     addFrog(frogCurrentPosition)
   }
 
