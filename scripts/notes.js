@@ -22,6 +22,12 @@
 
 // * Grid
   // should have many cells for smoother movement (20 x 20? more? trial by creating empty grid with frog first.)
+  // grid breakup:  
+    // pads: 20-59
+    // water: 0-219
+    // safety: 220-259
+    // road: 260-419
+    // safety: 420-459
 
 
 
