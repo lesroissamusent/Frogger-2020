@@ -1,16 +1,34 @@
 function init() {
+  // grid
   const grid = document.querySelector('.grid') // grab grid
-  
-  const width = 20// grid size
-  const height = 23
-
+  const width = 20 // grid size
+  const height = 23 // grid size
   const cellCount = width * height // number of cells
   const cells = []
   // console.log('Grid>>>', grid)
 
+
+  // game elements
+  const safetyPads = document.querySelector('div.grid')
+  // const waterClass = 'water'
+  // const waterCells = []
+  const waterSafety = 220-259
+  const road = 260-419
+  const roadSafety = 420-459
+  console.log('picked cells!', safetyPads)
+
+  let obstacles
+  let objects
+  
+  // froggy froggy 
   const frogClass = 'frog'
   const frogStartPosition = 449
   let frogCurrentPosition = 449
+  console.log('frog!', frogCurrentPosition)
+
+  const waterClass = 'water'
+  const waterCells = []
+  console.log('water cells!', waterCells)
 
   // * Make a grid
   function createGrid() {
@@ -20,9 +38,15 @@ function init() {
       grid.appendChild(cell)
       cells.push(cell) //add cells to array 'cells'
     }
+    function addWater(position) {
+      for (let i = 0; i < 220; i++) {
+        const waterCells = cells[position].classList.add(waterClass)
+        waterCells.push(cells) 
+      } 
+    }  
+    console.log(addWater)
     addFrog(frogStartPosition)
   }
-  // console.log('frog>>>', grid)
 
   // * Add Frog to grid
   function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
@@ -51,10 +75,12 @@ function init() {
       frogCurrentPosition -= width
     } else if (key === 40 /*down*/ && frogCurrentPosition + width <= width * height - 1) {
       frogCurrentPosition += width
+    } else if (key === 32 && frogCurrentPosition - height !== 0) {
+      frogCurrentPosition -= 40
     } else {
       console.log('Illegal move')
     }
-    
+    /*space && frogCurrentPosition - 40 >=  0*/
     // 3. add frog to new position
     addFrog(frogCurrentPosition)
   }

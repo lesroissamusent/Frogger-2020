@@ -2,18 +2,18 @@
 // ? FROGGER
 
 // * HTML
-  // Body
-    // Section
-      // title
-      // start button
+  //// Body
+    //// Section
+      //// title
+      //// start button
       // ! pause button
       // ! difficulty bar
-      // lives
-      // points
+      //// lives
+      //// points
       // ! high score
       // ! timer
-    // Grid
-    // Footer
+    //// Grid
+    //// Footer
      // Game instructions
      // info - created by/date/GA/etc.
 
@@ -32,9 +32,9 @@
 
 
 // * Frog Movement
-  // Can move in any direction
-  // Keyup vs keydown (thinking keydown)
-  // ! space bar for jumps on water objects? space bar key = 2 x cell movement?
+  //// Can move in any direction
+  //// Keyup vs keydown (thinking keydown)
+  ///// ! space bar for jumps on water objects? space bar key = 2 x cell movement?
 
 // * Car Obstacles
   // use class for obstacles
@@ -67,8 +67,8 @@
   
 
 // * Off limits areas
- // use current position for grid edges
-    // conditional statement
+ //// use current position for grid edges
+    //// conditional statement
  // use classes for objects?
  // use classes for water?
 
