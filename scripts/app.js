@@ -60,16 +60,15 @@ function init() {
       roadSafetyCells.push(i)
       // console.log(i)
     }
-    for (let i = 0; i < cellCount; i++) {
-      const cell = document.createElement('div')
-      cell.textContent = i //innerText
-      grid.appendChild(cell)
-      cells.push(cell) //add cells to array 'cells'
-    }
-    
+    // for (let i = 0; i < cellCount; i++) { //! My other classes have created a whole new grid. Is this normal??
+    //   const cell = document.createElement('div')
+    //   cell.textContent = i //innerText
+    //   grid.appendChild(cell)
+    //   cells.push(cell) //add cells to array 'cells'
+    // }
+    addSafetyPads(safetyPadCells)
     addFrog(frogStartPosition)
     addWater(waterCells)
-    addSafetyPads(safetyPadCells)
     addWaterSafety(waterSafetyCells)
     addRoad(roadCells)
     addRoadSafety(roadSafetyCells)
