@@ -67,30 +67,30 @@ footer {
   width: 600px;
 }
 
+.water {
+  background-color: rgb(84, 166, 254);
+}
+.water-safety {
+  background-color: rgb(254, 211, 103);
+}
+.road {
+  background-color: rgb(131, 131, 131);
+}
+.road-safety {
+  background-color: rgb(254, 211, 103);
+}
+
 
 /*  
 
 .safetypads {
   background-color: rgb(5, 128, 30);
 }
-.water {
-  background-color: rgb(84, 166, 254);
-}
 .objects {
   background-color: rgb(92, 76, 42);
-}
-.water-safety {
-  background-color: rgb(211, 151, 0);
-}
-.road {
-  background-color: rgb(65, 65, 65);
 }
 .obstacles {
   background-color: rgb(184, 57, 11);
 }
-.road-safety {
-  background-color: rgb(211, 151, 0);
-}
-
 
 */
