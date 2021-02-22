@@ -1,5 +1,6 @@
 function init() {
   // * grid
+  const start = document.querySelector('.start')
   const grid = document.querySelector('.grid') // grab grid
   const width = 20 // grid size
   const height = 23 // grid size
@@ -29,116 +30,120 @@ function init() {
 
   // let obstacles
   // let objects
+  // let points = 0
+  // let life = 3
   
+  function startGame() {
   // * froggy froggy 
-  const frogClass = 'frog'
-  const frogStartPosition = 449
-  let frogCurrentPosition = 449
-  console.log('frog!', frogCurrentPosition)
+    const frogClass = 'frog'
+    const frogStartPosition = 449
+    let frogCurrentPosition = 449
+    console.log('frog!', frogCurrentPosition)
 
-  // * Make a grid
-  function createGrid() {
-    for (let i = 0; i < cellCount; i++) {
-      const cell = document.createElement('div')
-      // cell.textContent = i //innerText
-      grid.appendChild(cell)
-      cells.push(cell) //add cells to array 'cells'
-    }
-    for (let i = 0; i < 220; i++) {
-      waterCells.push(i)
+    // * Make a grid
+    function createGrid() {
+      for (let i = 0; i < cellCount; i++) {
+        const cell = document.createElement('div')
+        // cell.textContent = i //innerText
+        grid.appendChild(cell)
+        cells.push(cell) //add cells to array 'cells'
+      }
+      for (let i = 0; i < 220; i++) {
+        waterCells.push(i)
       // console.log(i)
-    }
-    for (let i = 220; i < 260; i++) {
-      waterSafetyCells.push(i)
+      }
+      for (let i = 220; i < 260; i++) {
+        waterSafetyCells.push(i)
       // console.log(i)
-    }
-    for (let i = 260; i < 420; i++) {
-      roadCells.push(i)
+      }
+      for (let i = 260; i < 420; i++) {
+        roadCells.push(i)
       // console.log(i)
-    }
-    for (let i = 420; i < 460; i++) {
-      roadSafetyCells.push(i)
+      }
+      for (let i = 420; i < 460; i++) {
+        roadSafetyCells.push(i)
       // console.log(i)
+      }
+
+      addSafetyPads(safetyPadCells)
+      addFrog(frogStartPosition)
+      addWater(waterCells)
+      addWaterSafety(waterSafetyCells)
+      addRoad(roadCells)
+      addRoadSafety(roadSafetyCells)
+    }
+    // * Add Water to grid
+    function addWater() {
+      waterCells.forEach(position => {
+        cells[position].classList.add(waterClass) 
+      })
+    }
+    // * Add safetypads to grid
+    function addSafetyPads() {
+      safetyPadCells.forEach(position => {
+        cells[position].classList.add(safetyPadClass) 
+      })
+    }
+    // * Add waterSafety to grid
+    function addWaterSafety() {
+      waterSafetyCells.forEach(position => {
+        cells[position].classList.add(waterSafetyClass) 
+      })
+    }
+    // * Add road to grid
+    function addRoad() {
+      roadCells.forEach(position => {
+        cells[position].classList.add(roadClass) 
+      })
+    }
+    // * Add roadSafety to grid
+    function addRoadSafety() {
+      roadSafetyCells.forEach(position => {
+        cells[position].classList.add(roadSafetyClass) 
+      })
+    }
+    // * Add frog to grid
+    function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
+      cells[position].classList.add(frogClass) //add css Frog class
     }
 
-    addSafetyPads(safetyPadCells)
-    addFrog(frogStartPosition)
-    addWater(waterCells)
-    addWaterSafety(waterSafetyCells)
-    addRoad(roadCells)
-    addRoadSafety(roadSafetyCells)
-  }
-  // * Add Water to grid
-  function addWater() {
-    waterCells.forEach(position => {
-      cells[position].classList.add(waterClass) 
-    })
-  }
-  // * Add safetypads to grid
-  function addSafetyPads() {
-    safetyPadCells.forEach(position => {
-      cells[position].classList.add(safetyPadClass) 
-    })
-  }
-  // * Add waterSafety to grid
-  function addWaterSafety() {
-    waterSafetyCells.forEach(position => {
-      cells[position].classList.add(waterSafetyClass) 
-    })
-  }
-  // * Add road to grid
-  function addRoad() {
-    roadCells.forEach(position => {
-      cells[position].classList.add(roadClass) 
-    })
-  }
-  // * Add roadSafety to grid
-  function addRoadSafety() {
-    roadSafetyCells.forEach(position => {
-      cells[position].classList.add(roadSafetyClass) 
-    })
-  }
-  // * Add frog to grid
-  function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
-    cells[position].classList.add(frogClass) //add css Frog class
-  }
-
-  // * Remove frog from the grid --> so that you don't get a bunch of frogs on the screen evertime you try to move it.
-  function removeFrog(position) { 
-    cells[position].classList.remove(frogClass)
-  }
-
-  // * Move frog
-  function handleKeyDown(event) {
-    const key = event.keyCode // recognises that you are pressing keys and which key it is
-
-    removeFrog(frogCurrentPosition) // 1. remove frog
-
-
-    // 2. check  what key has been pressed to decide where frog should go
-    if (key === 39 /*right*/ && frogCurrentPosition % width !== width - 1) { 
-      frogCurrentPosition++
-    } else if (key === 37 /*left*/&& frogCurrentPosition % width !== 0) {
-      frogCurrentPosition--
-    } else if (key === 38 /*up*/ && frogCurrentPosition >= width) {
-      frogCurrentPosition -= width
-    } else if (key === 40 /*down*/ && frogCurrentPosition + width <= width * height - 1) {
-      frogCurrentPosition += width
-    } else if (key === 32 && frogCurrentPosition - height !== 0) {
-      frogCurrentPosition -= 40
-    } else {
-      console.log('Illegal move')
+    // * Remove frog from the grid --> so that you don't get a bunch of frogs on the screen evertime you try to move it.
+    function removeFrog(position) { 
+      cells[position].classList.remove(frogClass)
     }
-    // 3. add frog to new position
-    addFrog(frogCurrentPosition)
+
+    // * Move frog
+    function handleKeyDown(event) {
+      const key = event.keyCode // recognises that you are pressing keys and which key it is
+
+      removeFrog(frogCurrentPosition) // 1. remove frog
+
+
+      // 2. check  what key has been pressed to decide where frog should go
+      if (key === 39 /*right*/ && frogCurrentPosition % width !== width - 1) { 
+        frogCurrentPosition++
+      } else if (key === 37 /*left*/&& frogCurrentPosition % width !== 0) {
+        frogCurrentPosition--
+      } else if (key === 38 /*up*/ && frogCurrentPosition >= width) {
+        frogCurrentPosition -= width
+      } else if (key === 40 /*down*/ && frogCurrentPosition + width <= width * height - 1) {
+        frogCurrentPosition += width
+      } else if (key === 32 && frogCurrentPosition - height !== 0) {
+        frogCurrentPosition -= 40
+      } else {
+        console.log('Illegal move')
+      }
+      // 3. add frog to new position
+      addFrog(frogCurrentPosition)
+    }
+
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    createGrid() 
+
   }
-
-
-  document.addEventListener('keydown', handleKeyDown)
-
-  createGrid() 
-
-
+  start.addEventListener('click', startGame)
 }
 
 
