@@ -1,5 +1,5 @@
 function init() {
-  // grid
+  // * grid
   const grid = document.querySelector('.grid') // grab grid
   const width = 20 // grid size
   const height = 23 // grid size
@@ -8,19 +8,17 @@ function init() {
   // console.log('Grid>>>', grid)
 
 
-  // game elements
+  // * game elements
   const safetyPads = document.querySelector('div.grid')
-  // const waterClass = 'water'
-  // const waterCells = []
-  const waterSafety = 220-259
-  const road = 260-419
-  const roadSafety = 420-459
+  const waterSafety = 220 - 259
+  const road = 260 - 419
+  const roadSafety = 420 - 459
   console.log('picked cells!', safetyPads)
 
-  let obstacles
-  let objects
+  // let obstacles
+  // let objects
   
-  // froggy froggy 
+  // * froggy froggy 
   const frogClass = 'frog'
   const frogStartPosition = 449
   let frogCurrentPosition = 449
@@ -38,16 +36,20 @@ function init() {
       grid.appendChild(cell)
       cells.push(cell) //add cells to array 'cells'
     }
-    function addWater(position) {
-      for (let i = 0; i < 220; i++) {
-        const waterCells = cells[position].classList.add(waterClass)
-        waterCells.push(cells) 
-      } 
-    }  
-    console.log(addWater)
+    for (let i = 0; i < 220; i++) {
+      waterCells.push(i)
+      console.log(i)
+    }
+    console.log(waterCells)
     addFrog(frogStartPosition)
+    addWater(waterCells)
+    // addWater(waterCells)
   }
-
+  function addWater() {
+    waterCells.forEach(position => {
+      cells[position].classList.add(waterClass) 
+    })
+  }
   // * Add Frog to grid
   function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
     cells[position].classList.add(frogClass) //add css Frog class
@@ -59,7 +61,6 @@ function init() {
   }
 
   // * Move Frog
-
   function handleKeyDown(event) {
     const key = event.keyCode // recognises that you are pressing keys and which key it is
 
@@ -80,7 +81,6 @@ function init() {
     } else {
       console.log('Illegal move')
     }
-    /*space && frogCurrentPosition - 40 >=  0*/
     // 3. add frog to new position
     addFrog(frogCurrentPosition)
   }
@@ -89,7 +89,7 @@ function init() {
   document.addEventListener('keydown', handleKeyDown)
 
   createGrid() 
-  console.log('cells>>>', grid)
+
 
 
 
