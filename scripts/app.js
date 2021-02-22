@@ -9,6 +9,7 @@ function init() {
   // * game elements
   const safetyPadClass = 'safety-pads'
   const safetyPadCells = [1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38]
+  console.log('safetypad cells!', safetyPadCells)
 
   const waterClass = 'water'
   const waterCells = []

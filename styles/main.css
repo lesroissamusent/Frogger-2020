@@ -70,6 +70,9 @@ footer {
 .water {
   background-color: rgb(84, 166, 254);
 }
+.safetypads {
+  background-color: rgb(5, 128, 30);
+}
 .water-safety {
   background-color: rgb(254, 211, 103);
 }
@@ -83,9 +86,7 @@ footer {
 
 /*  
 
-.safetypads {
-  background-color: rgb(5, 128, 30);
-}
+
 .objects {
   background-color: rgb(92, 76, 42);
 }
