@@ -2,6 +2,7 @@ function init() {
   // * grid
   const start = document.querySelector('.start')
   const grid = document.querySelector('.grid') // grab grid
+  const myPoints = document.querySelector('.points')
   const width = 20 // grid size
   const height = 23 // grid size
   const cellCount = width * height // number of cells
@@ -30,11 +31,13 @@ function init() {
 
   // let obstacles
   // let objects
-  // let points = 0
+  
   // let life = 3
   
   function startGame() {
-  // * froggy froggy 
+    
+    let points = 0
+    // * froggy froggy 
     const frogClass = 'frog'
     const frogStartPosition = 449
     let frogCurrentPosition = 449
@@ -126,15 +129,17 @@ function init() {
         frogCurrentPosition--
       } else if (key === 38 /*up*/ && frogCurrentPosition >= width) {
         frogCurrentPosition -= width
+        points += 5
       } else if (key === 40 /*down*/ && frogCurrentPosition + width <= width * height - 1) {
         frogCurrentPosition += width
-      } else if (key === 32 && frogCurrentPosition - height !== 0) {
+      } else if (key === 32 /*space*/ && frogCurrentPosition - height !== 0) {
         frogCurrentPosition -= 40
       } else {
         console.log('Illegal move')
       }
       // 3. add frog to new position
       addFrog(frogCurrentPosition)
+      myPoints.innerHTML = points
     }
 
 

@@ -87,7 +87,9 @@ footer {
   background-color: rgb(254, 211, 103);
 }
 
-
+.game-over {
+  display: none;
+}
 /*  
 
 
