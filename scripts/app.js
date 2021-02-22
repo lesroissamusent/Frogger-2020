@@ -17,7 +17,10 @@ function init() {
   const waterSafetyCells = []
   console.log('waterSafety cells!', waterSafetyCells)
 
-  // const road = 260 - 419
+  const roadClass = 'road'
+  const roadCells = []
+  console.log('road cells!', roadCells)
+
   // const roadSafety = 420 - 459
   // console.log('picked cells!', safetyPads)
 
@@ -46,12 +49,17 @@ function init() {
       waterSafetyCells.push(i)
       // console.log(i)
     }
+    for (let i = 260; i < 420; i++) {
+      roadCells.push(i)
+      // console.log(i)
+    }
     
 
 
     addFrog(frogStartPosition)
     addWater(waterCells)
     addWaterSafety(waterSafetyCells)
+    addRoad(roadCells)
   
   }
   // * Add Water to grid
@@ -65,6 +73,13 @@ function init() {
   function addWaterSafety() {
     waterSafetyCells.forEach(position => {
       cells[position].classList.add(waterSafetyClass) 
+    })
+  }
+
+  // * Add road to grid
+  function addRoad() {
+    roadCells.forEach(position => {
+      cells[position].classList.add(roadClass) 
     })
   }
 
