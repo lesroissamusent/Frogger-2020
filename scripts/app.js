@@ -5,15 +5,21 @@ function init() {
   const height = 23 // grid size
   const cellCount = width * height // number of cells
   const cells = []
-  // console.log('Grid>>>', grid)
-
 
   // * game elements
-  const safetyPads = document.querySelector('div.grid')
-  const waterSafety = 220 - 259
-  const road = 260 - 419
-  const roadSafety = 420 - 459
-  console.log('picked cells!', safetyPads)
+  const safetyPads = 'safety-pads'
+
+  const waterClass = 'water'
+  const waterCells = []
+  console.log('water cells!', waterCells)
+
+  const waterSafetyClass = 'water-safety'
+  const waterSafetyCells = []
+  console.log('waterSafety cells!', waterSafetyCells)
+
+  // const road = 260 - 419
+  // const roadSafety = 420 - 459
+  // console.log('picked cells!', safetyPads)
 
   // let obstacles
   // let objects
@@ -23,10 +29,6 @@ function init() {
   const frogStartPosition = 449
   let frogCurrentPosition = 449
   console.log('frog!', frogCurrentPosition)
-
-  const waterClass = 'water'
-  const waterCells = []
-  console.log('water cells!', waterCells)
 
   // * Make a grid
   function createGrid() {
@@ -38,18 +40,34 @@ function init() {
     }
     for (let i = 0; i < 220; i++) {
       waterCells.push(i)
-      console.log(i)
+      // console.log(i)
     }
-    console.log(waterCells)
+    for (let i = 220; i < 260; i++) {
+      waterSafetyCells.push(i)
+      // console.log(i)
+    }
+    
+
+
     addFrog(frogStartPosition)
     addWater(waterCells)
-    // addWater(waterCells)
+    addWaterSafety(waterSafetyCells)
+  
   }
+  // * Add Water to grid
   function addWater() {
     waterCells.forEach(position => {
       cells[position].classList.add(waterClass) 
     })
   }
+
+  // * Add waterSafety to grid
+  function addWaterSafety() {
+    waterSafetyCells.forEach(position => {
+      cells[position].classList.add(waterSafetyClass) 
+    })
+  }
+
   // * Add Frog to grid
   function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
     cells[position].classList.add(frogClass) //add css Frog class
