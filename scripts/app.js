@@ -7,7 +7,8 @@ function init() {
   const cells = []
 
   // * game elements
-  const safetyPads = 'safety-pads'
+  const safetyPadClass = 'safety-pads'
+  const safetyPadCells = [1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38]
 
   const waterClass = 'water'
   const waterCells = []
@@ -58,8 +59,16 @@ function init() {
       roadSafetyCells.push(i)
       // console.log(i)
     }
+    for (let i = 0; i < cellCount; i++) {
+      const cell = document.createElement('div')
+      cell.textContent = i //innerText
+      grid.appendChild(cell)
+      cells.push(cell) //add cells to array 'cells'
+    }
+    
     addFrog(frogStartPosition)
     addWater(waterCells)
+    addSafetyPads(safetyPadCells)
     addWaterSafety(waterSafetyCells)
     addRoad(roadCells)
     addRoadSafety(roadSafetyCells)
@@ -68,6 +77,12 @@ function init() {
   function addWater() {
     waterCells.forEach(position => {
       cells[position].classList.add(waterClass) 
+    })
+  }
+  // * Add safetypads to grid
+  function addSafetyPads() {
+    safetyPadCells.forEach(position => {
+      cells[position].classList.add(safetyPadClass) 
     })
   }
 
