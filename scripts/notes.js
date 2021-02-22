@@ -19,19 +19,18 @@
 
 // * CSS
   // Have't decided on theme yet. Will build MVP before making final decision?
+    //toggle from frogger to 2020 css
 
-// * Grid
-  // should have many cells for smoother movement (20 x 20? more? trial by creating empty grid with frog first.)
-  // grid breakup:  
-    // pads: 20-59
-    // water: 0-219
-    // safety: 220-259
-    // road: 260-419
-    // safety: 420-459
+///// * Grid
+ //// should have many cells for smoother movement (20 x 20? more? trial by creating empty grid with frog first.)
+  //// grid breakup:  
+  //// pads: 20-59
+  //// water: 0-219
+  //// safety: 220-259
+  //// road: 260-419
+  //// safety: 420-459
 
-
-
-// * Frog Movement
+///// * Frog Movement
   //// Can move in any direction
   //// Keyup vs keydown (thinking keydown)
   ///// ! space bar for jumps on water objects? space bar key = 2 x cell movement?
@@ -57,8 +56,8 @@
 
 
 // * Safety pads
-  // 4 x safety pads
-  // area surrounding pads can be same class as water to be off limits
+  //// 4 x safety pads
+  //// area surrounding pads can be same class as water to be off limits
   // new frog introduced when current frog reaches a pad.
   // 100 points when frog reaches pad? Maybe no points / pass-fail.? unsure.  // ! Speed bonus? is that achievable? Start timer at beginning of game. conditional statement with set bands?
   // pad cannot accommodate more than one frog.
@@ -70,9 +69,12 @@
  //// use current position for grid edges
     //// conditional statement
  // use classes for objects?
- // use classes for water?
+ //// use classes for water?
 
 // * Lives + points
+  // frog class returns to starting Position when it dies.
+  // 100 points when frog reaches pad.
+  // 5 points for moving up a space?
   // 3 lifes in total, when all lives gone game over
   // if life value = 0, stop game
 

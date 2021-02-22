@@ -71,7 +71,11 @@ footer {
   background-color: rgb(84, 166, 254);
 }
 .safety-pads {
-  background-color: rgb(5, 128, 30);
+  /* background-image: url("../assets/PinClipart.com_lily-pad-clipart_5250322.png"); */
+  background-color: rgb(7, 145, 23);
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: black;
 }
 .water-safety {
   background-color: rgb(254, 211, 103);

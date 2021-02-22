@@ -40,7 +40,7 @@ function init() {
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.textContent = i //innerText
+      // cell.textContent = i //innerText
       grid.appendChild(cell)
       cells.push(cell) //add cells to array 'cells'
     }
@@ -60,12 +60,7 @@ function init() {
       roadSafetyCells.push(i)
       // console.log(i)
     }
-    // for (let i = 0; i < cellCount; i++) { //! My other classes have created a whole new grid. Is this normal??
-    //   const cell = document.createElement('div')
-    //   cell.textContent = i //innerText
-    //   grid.appendChild(cell)
-    //   cells.push(cell) //add cells to array 'cells'
-    // }
+
     addSafetyPads(safetyPadCells)
     addFrog(frogStartPosition)
     addWater(waterCells)
@@ -85,28 +80,24 @@ function init() {
       cells[position].classList.add(safetyPadClass) 
     })
   }
-
   // * Add waterSafety to grid
   function addWaterSafety() {
     waterSafetyCells.forEach(position => {
       cells[position].classList.add(waterSafetyClass) 
     })
   }
-
   // * Add road to grid
   function addRoad() {
     roadCells.forEach(position => {
       cells[position].classList.add(roadClass) 
     })
   }
-
   // * Add roadSafety to grid
   function addRoadSafety() {
     roadSafetyCells.forEach(position => {
       cells[position].classList.add(roadSafetyClass) 
     })
   }
-
   // * Add frog to grid
   function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
     cells[position].classList.add(frogClass) //add css Frog class
@@ -148,20 +139,7 @@ function init() {
   createGrid() 
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
 
 
 window.addEventListener('DOMContentLoaded', init)
