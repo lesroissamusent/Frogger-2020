@@ -92,17 +92,17 @@ function init() {
     })
   }
 
-  // * Add Frog to grid
+  // * Add frog to grid
   function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
     cells[position].classList.add(frogClass) //add css Frog class
   }
 
-  // * Remove Frog from the grid --> so that you don't get a bunch of frogs on the screen evertime you try to move it.
+  // * Remove frog from the grid --> so that you don't get a bunch of frogs on the screen evertime you try to move it.
   function removeFrog(position) { 
     cells[position].classList.remove(frogClass)
   }
 
-  // * Move Frog
+  // * Move frog
   function handleKeyDown(event) {
     const key = event.keyCode // recognises that you are pressing keys and which key it is
 
