@@ -79,7 +79,7 @@ function init() {
     addWaterSafety(waterSafetyCells)
     addRoad(roadCells)
     addRoadSafety(roadSafetyCells)
-   
+    
   }
   // * Add Water to grid
   function addWater() {
@@ -152,21 +152,24 @@ function init() {
 
   function startGame() {
     function addObstacles(position) {
-      cells[position].classList.add(obstacleClass)
+      
       setInterval(() => {
-        for (let i = 400; i < 420; i++) {
-          obstacleCurrentPosition.push(i)
-        // console.log(i)
-        }
-      // obstaclesPosition.forEach(position => {
-      //   cells[position].classList.add(obstacleClass) 
-      // }) 
+        
+        // for (let i = 400; i < 420; i++) {
+        cells[position].classList.add(obstacleClass)
+        console.log('obstacles')
+        // }
+        obstacleStartPosition.push(obstacleCurrentPosition)
       }, 1000)
+      
+    }
+    function removeObstacles(position) { 
+      cells[position].classList.remove(obstacleClass)
     }
     addObstacles(obstacleStartPosition)
-    // removeObstacles(obstacleCurrentPosition) 
+    removeObstacles(obstacleCurrentPosition) 
   }
-
+  
   // // * Remove obstacles from grid
   // function removeObstacles(position) { 
   //   cells[position].classList.remove(obstacleClass)
