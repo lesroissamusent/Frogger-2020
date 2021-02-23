@@ -29,11 +29,7 @@ function init() {
   const roadSafetyCells = []
   // console.log('roadSafety cells!', roadSafetyCells)
 
-  // * Obstacles
-  const obstacleClass = 'obstacles'
-  const obstacleStartPosition = 400
-  let obstacleCurrentPosition = 400
-
+  
 
   // let objects
   // let life = 3
@@ -148,52 +144,44 @@ function init() {
   }
 
   // * Add obstacles to grid
-  
+  // * Obstacles
+  const obstacleClass = 'obstacles'
+  const obstacleStartPosition = 399
+  let obstacleCurrentPosition = 400
+ 
+  let obstacleArray = [260, 261, 320, 321, 322, 400, 401, 402]
+
+  function removeObstacles(position) { 
+    cells[position].classList.remove(obstacleClass)
+  }
+
+  function addObstacles(position) {
+    cells[position].classList.add(obstacleClass)
+    console.log('obstacles', obstacleStartPosition)
+  }
 
   function startGame() {
-    function addObstacles(position) {
       
-      setInterval(() => {
-        
-        // for (let i = 400; i < 420; i++) {
-        cells[position].classList.add(obstacleClass)
-        console.log('obstacles')
-        // }
-        obstacleStartPosition.push(obstacleCurrentPosition)
-      }, 1000)
-      
-    }
-    function removeObstacles(position) { 
-      cells[position].classList.remove(obstacleClass)
-    }
-    addObstacles(obstacleStartPosition)
-    removeObstacles(obstacleCurrentPosition) 
-  }
-  
-  // // * Remove obstacles from grid
-  // function removeObstacles(position) { 
-  //   cells[position].classList.remove(obstacleClass)
-  // }
-  // // * Move obstacles
-  // function moveObstacles() {
-  //   // removeObstacles(position)
-  //   // obstaclesPosition = [440, 441, 442, 443]
+    setInterval(() => {
+      obstacleArray.forEach((index) => {
+        removeObstacles(index) 
+      })
 
-  //   setInterval(() => {
-  //     for (let i = 400; i < 420; i++) {
-  //       cells.classList.add('obstacles')
-  //       obstaclesPosition.push(i)
-  //       console.log(i)
-  //     }
-  //   }, 1000)
-  //   // addObstacles(obstaclesPosition)
-  // }
-  // moveObstacles()
-  
+      obstacleArray = obstacleArray.map((index) => {
+        return index + 1
+      })
+
+      obstacleArray.forEach((index) => {
+        addObstacles(index) 
+      })
+      console.log('obstacle array', obstacleArray)
+    }, 1000)
+    
+    
+  }
   start.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
   createGrid() 
 }
-
 
 window.addEventListener('DOMContentLoaded', init)
