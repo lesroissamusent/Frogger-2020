@@ -29,11 +29,12 @@ function init() {
   const roadSafetyCells = []
   // console.log('roadSafety cells!', roadSafetyCells)
 
+  // * Obstacles
   const obstacleClass = 'obstacles'
-  const obstaclesPosition = []
-  console.log('obstacle cells!', obstaclesPosition)
+  const obstacleStartPosition = 400
+  let obstacleCurrentPosition = 400
 
-  let obstacles
+
   // let objects
   // let life = 3
   
@@ -78,7 +79,7 @@ function init() {
     addWaterSafety(waterSafetyCells)
     addRoad(roadCells)
     addRoadSafety(roadSafetyCells)
-  
+   
   }
   // * Add Water to grid
   function addWater() {
@@ -147,17 +148,24 @@ function init() {
   }
 
   // * Add obstacles to grid
-  function addObstacles() {
-    obstaclesPosition.forEach(position => {
-      cells[position].classList.add(obstacleClass) 
-    }) 
-  }
+  
 
   function startGame() {
-    addObstacles(obstaclesPosition)
+    function addObstacles(position) {
+      cells[position].classList.add(obstacleClass)
+      setInterval(() => {
+        for (let i = 400; i < 420; i++) {
+          obstacleCurrentPosition.push(i)
+        // console.log(i)
+        }
+      // obstaclesPosition.forEach(position => {
+      //   cells[position].classList.add(obstacleClass) 
+      // }) 
+      }, 1000)
+    }
+    addObstacles(obstacleStartPosition)
+    // removeObstacles(obstacleCurrentPosition) 
   }
-
-
 
   // // * Remove obstacles from grid
   // function removeObstacles(position) { 
