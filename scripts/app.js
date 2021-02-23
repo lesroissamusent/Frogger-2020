@@ -1,6 +1,6 @@
 function init() {
   // * grid
-  // const start = document.querySelector('button')
+  const start = document.querySelector('button')
   const grid = document.querySelector('.grid') // grab grid
   const myPoints = document.querySelector('.points')
   const width = 20 // grid size
@@ -29,11 +29,11 @@ function init() {
   const roadSafetyCells = []
   // console.log('roadSafety cells!', roadSafetyCells)
 
-  //! const obstacleClass = 'obstacles'
-  //! const obstaclesPosition = []
-  //! console.log('obstacle cells!', obstaclesPosition)
+  const obstacleClass = 'obstacles'
+  const obstaclesPosition = []
+  console.log('obstacle cells!', obstaclesPosition)
 
-  //! let obstacles
+  let obstacles
   // let objects
   // let life = 3
   
@@ -78,8 +78,7 @@ function init() {
     addWaterSafety(waterSafetyCells)
     addRoad(roadCells)
     addRoadSafety(roadSafetyCells)
-    // ? addObstacles(obstaclesPosition)
-    // ? console.log('obstacles>>', obstaclesPosition)
+  
   }
   // * Add Water to grid
   function addWater() {
@@ -147,19 +146,18 @@ function init() {
     myPoints.innerHTML = points
   }
 
+  // * Add obstacles to grid
+  function addObstacles() {
+    obstaclesPosition.forEach(position => {
+      cells[position].classList.add(obstacleClass) 
+    }) 
+  }
+
+  function startGame() {
+    addObstacles(obstaclesPosition)
+  }
 
 
-
-  // function startGame() {
-  //   obstacles = new Compo
-  // }
-  
-  // // * Add obstacles to grid
-  // function addObstacles() {
-  //   obstaclesPosition.forEach(position => {
-  //     cells[position].classList.add(obstacleClass) 
-  //   }) 
-  // }
 
   // // * Remove obstacles from grid
   // function removeObstacles(position) { 
@@ -180,13 +178,11 @@ function init() {
   //   // addObstacles(obstaclesPosition)
   // }
   // moveObstacles()
-  // start.addEventListener('click', startGame)
-
+  
+  start.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
   createGrid() 
 }
 
 
 window.addEventListener('DOMContentLoaded', init)
-
-
