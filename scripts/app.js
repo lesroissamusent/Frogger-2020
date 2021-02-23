@@ -29,11 +29,11 @@ function init() {
   const roadSafetyCells = []
   // console.log('roadSafety cells!', roadSafetyCells)
 
-  const obstacleClass = 'obstacles'
-  const obstaclesPosition = []
-  console.log('obstacle cells!', obstaclesPosition)
+  //! const obstacleClass = 'obstacles'
+  //! const obstaclesPosition = []
+  //! console.log('obstacle cells!', obstaclesPosition)
 
-  // let obstacles
+  //! let obstacles
   // let objects
   // let life = 3
   
@@ -78,8 +78,8 @@ function init() {
     addWaterSafety(waterSafetyCells)
     addRoad(roadCells)
     addRoadSafety(roadSafetyCells)
-    addObstacles(obstaclesPosition)
-    console.log('obstacles>>', obstaclesPosition)
+    // ? addObstacles(obstaclesPosition)
+    // ? console.log('obstacles>>', obstaclesPosition)
   }
   // * Add Water to grid
   function addWater() {
@@ -123,10 +123,10 @@ function init() {
   function handleKeyDown(event) {
     const key = event.keyCode // recognises that you are pressing keys and which key it is
 
-    // 1. remove frog
+    // * 1. remove frog
     removeFrog(frogCurrentPosition) 
 
-    // 2. check  what key has been pressed to decide where frog should go
+    // * 2. check  what key has been pressed to decide where frog should go
     if (key === 39 /*right*/ && frogCurrentPosition % width !== width - 1) { 
       frogCurrentPosition++
     } else if (key === 37 /*left*/&& frogCurrentPosition % width !== 0) {
@@ -142,41 +142,48 @@ function init() {
     } else {
       console.log('Illegal move')
     }
-    // 3. add frog to new position
+    // * 3. add frog to new position
     addFrog(frogCurrentPosition)
     myPoints.innerHTML = points
   }
+
+
+
+
   // function startGame() {
+  //   obstacles = new Compo
+  // }
   
-  // * Add obstacles to grid
-  function addObstacles() {
-    obstaclesPosition.forEach(position => {
-      cells[position].classList.add(obstacleClass) 
-    }) 
-  }
+  // // * Add obstacles to grid
+  // function addObstacles() {
+  //   obstaclesPosition.forEach(position => {
+  //     cells[position].classList.add(obstacleClass) 
+  //   }) 
+  // }
 
-  // * Remove obstacles from grid
-  function removeObstacles(position) { 
-    cells[position].classList.remove(obstacleClass)
-  }
-  // * Move obstacles
-  function moveObstacles() {
-    // removeObstacles(position)
-    obstaclesPosition = [440, 441, 442, 443]
+  // // * Remove obstacles from grid
+  // function removeObstacles(position) { 
+  //   cells[position].classList.remove(obstacleClass)
+  // }
+  // // * Move obstacles
+  // function moveObstacles() {
+  //   // removeObstacles(position)
+  //   // obstaclesPosition = [440, 441, 442, 443]
 
-    setInterval(() => {
-      for (let i = 400; i < 420; i++) {
-        cells[Math.floor(Math.random() * obstaclesPosition)].classList.add('obstacles')
-        // obstaclesPosition.push(i)
-        console.log(i)
-      }
-    }, 1000)
-    // addObstacles(obstaclesPosition)
-  }
-  moveObstacles()
+  //   setInterval(() => {
+  //     for (let i = 400; i < 420; i++) {
+  //       cells.classList.add('obstacles')
+  //       obstaclesPosition.push(i)
+  //       console.log(i)
+  //     }
+  //   }, 1000)
+  //   // addObstacles(obstaclesPosition)
+  // }
+  // moveObstacles()
+  // start.addEventListener('click', startGame)
+
   document.addEventListener('keydown', handleKeyDown)
   createGrid() 
-  // start.addEventListener('click', startGame)
 }
 
 
