@@ -86,18 +86,30 @@ footer {
 .road-safety {
   background-color: rgb(254, 211, 103);
 }
+.obstacles {
+  background-color: rgb(184, 57, 11);
+}
 
+
+
+
+.start {
+  background-color: rgb(254, 211, 103);
+}
 .game-over {
   display: none;
 }
+
+
+
+
+
 /*  
 
 
 .objects {
   background-color: rgb(92, 76, 42);
 }
-.obstacles {
-  background-color: rgb(184, 57, 11);
-}
+
 
 */
