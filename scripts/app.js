@@ -14,6 +14,7 @@ function init() {
   const safetyPadClass = 'safety-pads'
   const safetyPadCells = [1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38]
   // console.log('safetypad cells!', safetyPadCells)
+  const frogSafeClass = 'safety-with-frog'
 
   const waterClass = 'water'
   const waterCells = []
@@ -120,17 +121,17 @@ function init() {
     removeFrog(frogCurrentPosition) 
 
     // * 2. check  what key has been pressed to decide where frog should go
-    if (key === 39 /*right*/ && frogCurrentPosition % width !== width - 1) { 
+    if (key === 39/*right*/ && frogCurrentPosition % width !== width - 1) { 
       frogCurrentPosition++
-    } else if (key === 37 /*left*/&& frogCurrentPosition % width !== 0) {
+    } else if (key === 37/*left*/ && frogCurrentPosition % width !== 0) {
       frogCurrentPosition--
-    } else if (key === 38 /*up*/ && frogCurrentPosition >= width) {
+    } else if (key === 38/*up*/ && frogCurrentPosition >= width) {
       frogCurrentPosition -= width
       points += 5
-    } else if (key === 40 /*down*/ && frogCurrentPosition + width <= width * height - 1) {
+    } else if (key === 40/*down*/ && frogCurrentPosition + width <= width * height - 1) {
       frogCurrentPosition += width
-    } else if (key === 32 /*space*/ && frogCurrentPosition - height !== 0) {
-      frogCurrentPosition -= 40
+    } else if (key === 74/*J*/ && frogCurrentPosition - height !== 0) {
+      frogCurrentPosition -= width * 2
       points += 10
     } else {
       console.log('Illegal move')
@@ -419,6 +420,7 @@ function init() {
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)
       frogCurrentPosition = 449
+      cells[frogCurrentPosition].classList.add(frogSafeClass)
       points += 50
     } else {
       console.log('nothing to see here')

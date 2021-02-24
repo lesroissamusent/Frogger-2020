@@ -70,13 +70,16 @@ footer {
 .water {
   background-color: rgb(84, 166, 254);
 }
-.grid div.safety-pads {
+.safety-pads {
   background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
   background-position: 10em;
   /* background-color: rgb(7, 145, 23); */
   /* border-radius: 6px; */
   /* border-width: 2px;
   border-color: black; */
+}
+.safety-with-frog {
+  background-color: red;
 }
 .water-safety {
   background-color: rgb(254, 211, 103);

@@ -86,3 +86,27 @@
 
 
 
+
+
+    // // * SAFETY PADSSS
+// const safetyPadClass = 'safety-pads'
+// const frogSafeClass = 'safety-with-frog'
+
+// let safetyArrayOne = [1, 2, 21, 22]
+// let safetyArrayTwo = [5, 6, 25, 26]
+// let safetyArrayThree = [9, 10, 29, 30]
+// let safetyArrayFour = [13, 14, 33, 34]
+// let safetyArrayFive = [17, 18, 37, 38]
+
+// function addSafety(position) {
+//   cells[safetyArrayOne].classList.add(safetyPadClass)
+  
+// }
+// addSafety()
+// // console.log(addSafety(safetyArrayOne))
+
+
+// function startGame() {
+  
+
+
