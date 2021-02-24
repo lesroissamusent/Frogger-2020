@@ -146,10 +146,9 @@ function init() {
 
   // * Obstacles
   const obstacleClass = 'obstacles'
-  // const obstacleStartPosition = []
-  // let obstacleCurrentPosition = 400
 
   let obstacleArray = [260, 280, 261, 281, 319, 318, 317, 339, 338, 337, 340, 341, 360, 361, 399, 398, 397, 419, 418, 417]
+  let obstacleArrayOne = [260, 280, 261, 281]
 
   function removeObstacles(position) { 
     cells[position].classList.remove(obstacleClass)
@@ -160,81 +159,105 @@ function init() {
     // console.log('obstacles', obstacleStartPosition)
   }
 
-  function startGame() {
-      
-    let obstacleTimer = setInterval(() => {
-      obstacleArray.forEach((index) => {
+  function rowOneTimer() {
+    const obstacleTimer = setInterval(() => {
+      obstacleArrayOne.forEach((index) => {
         removeObstacles(index) 
       })
-      obstacleArray = obstacleArray.map((index) => {
-        if (index <= 260 && index >= 299) {
-          return index + 1
-        } else if (index <= 300 && index >= 339) {
-          return index - 1
-        } else if (index <= 340 && index >= 379) {
-          return index + 1
-        } else {
-          return index - 1
-        }
-      })
-      // obstacleArray = obstacleArray.map((index) => {
-      //   return index + 1
-      // })
 
-      obstacleArray.forEach((index) => {
+      obstacleArrayOne = obstacleArrayOne.map((index) => {
+        if ((index + 1) % width === 0) {
+          console.log('here')
+          return index - (width - 1)
+        } else {
+          return index + 1
+        } 
+      })
+      obstacleArrayOne.forEach((index) => {
         addObstacles(index) 
       })
-      console.log('obstacle array', obstacleArray)
-    }, 1000)  
+      console.log('obstacle array One', obstacleArrayOne)
+    }, 500)
+  }
+
+
+  function startGame() {
+    rowOneTimer()
+    // const obstacleTimer = setInterval(() => {
+    //   obstacleArray.forEach((index) => {
+    //     removeObstacles(index) 
+    //   })
+    //   obstacleArray = obstacleArray.map((index) => {
+    //     if (index <= 260 && index >= 299) {
+    //       return index + 1
+    //     } else if (index <= 300 && index >= 339) {
+    //       return index - 1
+    //     } else if (index <= 340 && index >= 379) {
+    //       return index + 1
+    //     } else {
+    //       return index - 1
+    //     }
+    //   })
+
+    //   obstacleArray.forEach((index) => {
+    //     addObstacles(index) 
+    //   })
+    //   console.log('obstacle array', obstacleArray)
+    // }, 1000)  
   
 
     // * objects
-    const objectClass = 'objects'
+    // const objectClass = 'objects'
     // const objectStartPosition = 399
     // let objectCurrentPosition = 400
 
-    let objectArray = [60, 61, 62, 63, 106, 107, 108, 153, 154, 155, 156, 188, 189, 190, 191]
+    // let objectArray = [60, 61, 62, 63, 106, 107, 108, 153, 154, 155, 156, 188, 189, 190, 191]
 
-    function removeObjects(position) { 
-      cells[position].classList.remove(objectClass)
-    }
 
-    function addObjects(position) {
-      cells[position].classList.add(objectClass)
-    }
+    // function removeObjects(position) { 
+    //   cells[position].classList.remove(objectClass)
+    // }
 
-    let objectTimer = setInterval(() => {
-      objectArray.forEach((index) => {
-        removeObjects(index) 
-      })
-      objectArray = objectArray.map((index) => {
-        if (index <= 260 && index >= 299) {
-          return index + 1
-        } else if (index <= 300 && index >= 339) {
-          return index - 1
-        } else if (index <= 340 && index >= 379) {
-          return index + 1
-        } else {
-          return index - 1
-        }
-      })
-      // objectArray = objectArray.map((index) => {
-      //   return index + 1
-      // })
+    // function addObjects(position) {
+    //   cells[position].classList.add(objectClass)
+    // }
 
-      objectArray.forEach((index) => {
-        addObjects(index) 
-      })
-      console.log('object array', objectArray)
-    }, 1000)
-    
-    // * PAUSE GAME FOR MY SANITY!
-    function pauseGame() {
-      clearInterval(objectTimer)
-      clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // const objectTimerOne = setInterval(() => {
+    //   objectArray.forEach((index) => {
+    //     removeObjects(index) 
+    //   })
+    //   objectArray = objectArray.map((index) => {
+    //     if (index <= 260 && index >= 299) {
+    //       return index + 1
+    //     } 
+    //   })
+    //   objectArray.forEach((index) => {
+    //     addObjects(index) 
+    //   })
+    // })
+  
+    // const objectTimerTwo = setInterval(() => {
+    //   objectArray.forEach((index) => {
+    //     removeObjects(index) 
+    //   })
+    //   objectArray = objectArray.map((index) => {
+    //     if (index <= 300 && index >= 339) {
+    //       return index - 1
+    //     } 
+    //   })
+
+    //   objectArray.forEach((index) => {
+    //     addObjects(index) 
+    //   })
+    //   console.log('object array', objectArray)
+    // }, 1000)
   }
+  // * PAUSE GAME FOR MY SANITY!
+  // function pauseGame() {
+  //   clearInterval(objectTimer)
+  //   clearInterval(obstacleTimer)
+  // }
+  // pause.addEventListener('click', pauseGame)
   
 
   start.addEventListener('click', startGame)
