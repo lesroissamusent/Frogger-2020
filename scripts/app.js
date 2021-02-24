@@ -180,6 +180,11 @@ function init() {
       })
       console.log('obstacle array One', obstacleArrayOne)
     }, 500)
+    function pauseGame() {
+      clearInterval(obstacleTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowTwoTimer() {
@@ -201,6 +206,11 @@ function init() {
       })
       console.log('obstacle array Two', obstacleArrayTwo)
     }, 500)
+    function pauseGame() {
+      clearInterval(obstacleTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowThreeTimer() {
@@ -222,6 +232,11 @@ function init() {
       })
       console.log('obstacle array Three', obstacleArrayThree)
     }, 500)
+    function pauseGame() {
+      clearInterval(obstacleTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowFourtimer() {
@@ -243,6 +258,11 @@ function init() {
       })
       console.log('obstacle array Four', obstacleArrayFour)
     }, 500)
+    function pauseGame() {
+      clearInterval(obstacleTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
 
   // * OBJECTSSSSSS
@@ -280,6 +300,11 @@ function init() {
       })
       console.log('object array One', objectArrayOne)
     }, 500)
+    function pauseGame() {
+      clearInterval(objectTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
 
   function ObjectRowTwoTimer() {
@@ -301,6 +326,11 @@ function init() {
       })
       console.log('object array Two', objectArrayTwo)
     }, 500)
+    function pauseGame() {
+      clearInterval(objectTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
   function ObjectRowThreeTimer() {
     const objectTimer = setInterval(() => {
@@ -321,6 +351,11 @@ function init() {
       })
       console.log('object array Three', objectArrayThree)
     }, 500)
+    function pauseGame() {
+      clearInterval(objectTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
   function ObjectRowFourTimer() {
     const objectTimer = setInterval(() => {
@@ -341,6 +376,11 @@ function init() {
       })
       console.log('object array Four', objectArrayFour)
     }, 500)
+    function pauseGame() {
+      clearInterval(objectTimer)
+      // clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
   }
 
 
@@ -360,10 +400,10 @@ function init() {
     ObjectRowFourTimer()
   }
 
-  // * PAUSE GAME FOR MY SANITY!
+  // // * PAUSE GAME FOR MY SANITY!
   // function pauseGame() {
   //   clearInterval(objectTimer)
-  //   clearInterval(obstacleTimer)
+  //   // clearInterval(obstacleTimer)
   // }
   // pause.addEventListener('click', pauseGame)
   
