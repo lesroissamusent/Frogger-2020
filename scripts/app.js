@@ -302,46 +302,46 @@ function init() {
       console.log('object array Two', objectArrayTwo)
     }, 500)
   }
-  // function ObjectRowOneTimer() {
-  //   const objectTimer = setInterval(() => {
-  //     objectArrayOne.forEach((index) => {
-  //       removeObjects(index) 
-  //     })
+  function ObjectRowThreeTimer() {
+    const objectTimer = setInterval(() => {
+      objectArrayThree.forEach((index) => {
+        removeObjects(index) 
+      })
 
-  //     objectArrayOne = objectArrayOne.map((index) => {
-  //       if ((index + 1) % width === 0) {
-  //       // console.log('here')
-  //         return index - (width - 1)
-  //       } else {
-  //         return index + 1
-  //       } 
-  //     })
-  //     objectArrayOne.forEach((index) => {
-  //       addObjects(index) 
-  //     })
-  //     console.log('object array One', objectArrayOne)
-  //   }, 500)
-  // }
-  // function ObjectRowOneTimer() {
-  //   const objectTimer = setInterval(() => {
-  //     objectArrayOne.forEach((index) => {
-  //       removeObjects(index) 
-  //     })
+      objectArrayThree = objectArrayThree.map((index) => {
+        if ((index + 1) % width === 0) {
+        // console.log('here')
+          return index - (width - 1)
+        } else {
+          return index + 1
+        } 
+      })
+      objectArrayThree.forEach((index) => {
+        addObjects(index) 
+      })
+      console.log('object array Three', objectArrayThree)
+    }, 500)
+  }
+  function ObjectRowFourTimer() {
+    const objectTimer = setInterval(() => {
+      objectArrayFour.forEach((index) => {
+        removeObjects(index) 
+      })
 
-  //     objectArrayOne = objectArrayOne.map((index) => {
-  //       if ((index + 1) % width === 0) {
-  //       // console.log('here')
-  //         return index - (width - 1)
-  //       } else {
-  //         return index + 1
-  //       } 
-  //     })
-  //     objectArrayOne.forEach((index) => {
-  //       addObjects(index) 
-  //     })
-  //     console.log('object array One', objectArrayOne)
-  //   }, 500)
-  // }
+      objectArrayFour = objectArrayFour.map((index) => {
+        if ((index - 1) % width === 0) { 
+          console.log('here')
+          return index + (width - 1)
+        } else {
+          return index - 1
+        } 
+      })
+      objectArrayFour.forEach((index) => {
+        addObjects(index) 
+      })
+      console.log('object array Four', objectArrayFour)
+    }, 500)
+  }
 
 
 
@@ -356,6 +356,8 @@ function init() {
 
     ObjectRowOneTimer()
     ObjectRowTwoTimer()
+    ObjectRowThreeTimer()
+    ObjectRowFourTimer()
   }
 
   // * PAUSE GAME FOR MY SANITY!
