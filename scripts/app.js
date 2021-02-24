@@ -175,10 +175,11 @@ function init() {
       })
       obstacleArrayOne.forEach((index) => {
         addObstacles(index) 
-        collision()
+        gameRules()
       })
       // console.log('obstacle array One', obstacleArrayOne)
     }, 500)
+
     function pauseGame() {
       clearInterval(obstacleTimer)
       // clearInterval(obstacleTimer)
@@ -393,7 +394,7 @@ function init() {
     
   }
 
-  function collision() {
+  function gameRules() {
     if (lives < 1) {
       console.log('lives', lives)
       gameOver()
@@ -414,6 +415,11 @@ function init() {
       frogCurrentPosition = 449
       lives -= 1
       points -= 10
+    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
+      removeFrog(frogCurrentPosition) 
+      addFrog(frogStartPosition)
+      frogCurrentPosition = 449
+      points += 50
     } else {
       console.log('nothing to see here')
     }
