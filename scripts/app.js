@@ -144,19 +144,13 @@ function init() {
     myPoints.innerHTML = points
   }
 
-  // * Obstacles
+  // * OBSTACLESSSSSS
   const obstacleClass = 'obstacles'
 
-  // let obstacleArray = [, , , , ]
   let obstacleArrayOne = [260, 280, 261, 281]
   let obstacleArrayTwo = [319, 318, 317,339, 338, 337]
   let obstacleArrayThree = [340, 341, 360, 361]
   let obstacleArrayFour = [399, 398, 397,419, 418, 417]
-  // let obstacleArrayOne = []
-  // let obstacleArrayOne = []
-  // let obstacleArrayOne = []
-  // let obstacleArrayOne = []
-
 
   function removeObstacles(position) { 
     cells[position].classList.remove(obstacleClass)
@@ -167,7 +161,7 @@ function init() {
     // console.log('obstacles', obstacleStartPosition)
   }
 
-  function rowOneTimer() {
+  function ObstacleRowOneTimer() {
     const obstacleTimer = setInterval(() => {
       obstacleArrayOne.forEach((index) => {
         removeObstacles(index) 
@@ -188,7 +182,7 @@ function init() {
     }, 500)
   }
 
-  function rowTwoTimer() {
+  function obstacleRowTwoTimer() {
     const obstacleTimer = setInterval(() => {
       obstacleArrayTwo.forEach((index) => {
         removeObstacles(index) 
@@ -209,7 +203,7 @@ function init() {
     }, 500)
   }
 
-  function rowThreeTimer() {
+  function obstacleRowThreeTimer() {
     const obstacleTimer = setInterval(() => {
       obstacleArrayThree.forEach((index) => {
         removeObstacles(index) 
@@ -230,7 +224,7 @@ function init() {
     }, 500)
   }
 
-  function rowFourTimer() {
+  function obstacleRowFourtimer() {
     const obstacleTimer = setInterval(() => {
       obstacleArrayFour.forEach((index) => {
         removeObstacles(index) 
@@ -251,9 +245,42 @@ function init() {
     }, 500)
   }
 
+  // * OBJECTSSSSSS
+  const objectClass = 'objects'
 
+  let objectArrayOne = [60, 61, 62, 63]
+  let objectArrayTwo = [106, 107, 108]
+  let objectArrayThree = [153, 154, 155, 156]
+  let objectArrayFour = [188, 189, 190, 191]
 
+  function removeObjects(position) { 
+    cells[position].classList.remove(objectClass)
+  }
 
+  function addObjects(position) {
+    cells[position].classList.add(objectClass)
+  }
+
+  function ObjectRowOneTimer() {
+    const objectTimer = setInterval(() => {
+      objectArrayOne.forEach((index) => {
+        removeObjects(index) 
+      })
+
+      objectArrayOne = objectArrayOne.map((index) => {
+        if ((index + 1) % width === 0) {
+        // console.log('here')
+          return index - (width - 1)
+        } else {
+          return index + 1
+        } 
+      })
+      objectArrayOne.forEach((index) => {
+        addObjects(index) 
+      })
+      console.log('object array One', objectArrayOne)
+    }, 500)
+  }
 
 
 
@@ -263,10 +290,12 @@ function init() {
 
 
   function startGame() {
-    rowOneTimer()
-    rowTwoTimer()
-    rowThreeTimer()
-    rowFourTimer()
+    ObstacleRowOneTimer()
+    obstacleRowTwoTimer()
+    obstacleRowThreeTimer()
+    obstacleRowFourtimer()
+
+    ObjectRowOneTimer()
     // const obstacleTimer = setInterval(() => {
     //   obstacleArray.forEach((index) => {
     //     removeObstacles(index) 
@@ -295,17 +324,10 @@ function init() {
     // const objectStartPosition = 399
     // let objectCurrentPosition = 400
 
-    // let objectArray = [60, 61, 62, 63, 106, 107, 108, 153, 154, 155, 156, 188, 189, 190, 191]
+    // 
 
 
-    // function removeObjects(position) { 
-    //   cells[position].classList.remove(objectClass)
-    // }
-
-    // function addObjects(position) {
-    //   cells[position].classList.add(objectClass)
-    // }
-
+    
     // const objectTimerOne = setInterval(() => {
     //   objectArray.forEach((index) => {
     //     removeObjects(index) 
