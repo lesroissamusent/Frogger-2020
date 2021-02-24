@@ -1,6 +1,7 @@
 function init() {
   // * grid
-  const start = document.querySelector('button')
+  const start = document.querySelector('.start')
+  const pause = document.querySelector('.pause')
   const grid = document.querySelector('.grid') // grab grid
   const myPoints = document.querySelector('.points')
   const width = 20 // grid size
@@ -161,7 +162,7 @@ function init() {
 
   function startGame() {
       
-    setInterval(() => {
+    let obstacleTimer = setInterval(() => {
       obstacleArray.forEach((index) => {
         removeObstacles(index) 
       })
@@ -176,67 +177,68 @@ function init() {
           return index - 1
         }
       })
-      obstacleArray = obstacleArray.map((index) => {
-        return index + 1
-      })
+      // obstacleArray = obstacleArray.map((index) => {
+      //   return index + 1
+      // })
 
       obstacleArray.forEach((index) => {
         addObstacles(index) 
       })
       console.log('obstacle array', obstacleArray)
     }, 1000)  
-  }
+  
 
-  // * objects
-  const objectClass = 'objects'
-  // const objectStartPosition = 399
-  // let objectCurrentPosition = 400
+    // * objects
+    const objectClass = 'objects'
+    // const objectStartPosition = 399
+    // let objectCurrentPosition = 400
 
-  let objectArray = [60, 61, 62, 63, 106, 107, 108, 153, 154, 155, 156, 188, 189, 190, 191]
+    let objectArray = [60, 61, 62, 63, 106, 107, 108, 153, 154, 155, 156, 188, 189, 190, 191]
 
-  function removeobjects(position) { 
-    cells[position].classList.remove(objectClass)
-  }
+    function removeObjects(position) { 
+      cells[position].classList.remove(objectClass)
+    }
 
-  function addobjects(position) {
-    cells[position].classList.add(objectClass)
-  }
+    function addObjects(position) {
+      cells[position].classList.add(objectClass)
+    }
 
-  setInterval(() => {
-    objectArray.forEach((index) => {
-      removeobjects(index) 
-    })
-    objectArray = objectArray.map((index) => {
-      if (index <= 260 && index >= 299) {
-        return index + 1
-      } else if (index <= 300 && index >= 339) {
-        return index - 1
-      } else if (index <= 340 && index >= 379) {
-        return index + 1
-      } else {
-        return index - 1
-      }
-    })
-    objectArray = objectArray.map((index) => {
-      return index + 1
-    })
+    let objectTimer = setInterval(() => {
+      objectArray.forEach((index) => {
+        removeObjects(index) 
+      })
+      objectArray = objectArray.map((index) => {
+        if (index <= 260 && index >= 299) {
+          return index + 1
+        } else if (index <= 300 && index >= 339) {
+          return index - 1
+        } else if (index <= 340 && index >= 379) {
+          return index + 1
+        } else {
+          return index - 1
+        }
+      })
+      // objectArray = objectArray.map((index) => {
+      //   return index + 1
+      // })
 
-    objectArray.forEach((index) => {
-      addobjects(index) 
-    })
-    console.log('object array', objectArray)
-  }, 1000)
+      objectArray.forEach((index) => {
+        addObjects(index) 
+      })
+      console.log('object array', objectArray)
+    }, 1000)
     
-    
-
-
-
-
-
-
-
+    // * PAUSE GAME FOR MY SANITY!
+    function pauseGame() {
+      clearInterval(objectTimer)
+      clearInterval(obstacleTimer)
+    }
+    pause.addEventListener('click', pauseGame)
+  }
+  
 
   start.addEventListener('click', startGame)
+  
   document.addEventListener('keydown', handleKeyDown)
   createGrid() 
 }
