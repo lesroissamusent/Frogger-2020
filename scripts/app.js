@@ -184,9 +184,7 @@ function init() {
         addObstacles(index) 
       })
       console.log('obstacle array', obstacleArray)
-    }, 1000)
-    
-    
+    }, 1000)  
   }
 
   // * objects
@@ -204,32 +202,30 @@ function init() {
     cells[position].classList.add(objectClass)
   }
 
-
-      
-    setInterval(() => {
-      objectArray.forEach((index) => {
-        removeobjects(index) 
-      })
-      objectArray = objectArray.map((index) => {
-        if (index <= 260 && index >= 299) {
-          return index + 1
-        } else if (index <= 300 && index >= 339) {
-          return index - 1
-        } else if (index <= 340 && index >= 379) {
-          return index + 1
-        } else {
-          return index - 1
-        }
-      })
-      objectArray = objectArray.map((index) => {
+  setInterval(() => {
+    objectArray.forEach((index) => {
+      removeobjects(index) 
+    })
+    objectArray = objectArray.map((index) => {
+      if (index <= 260 && index >= 299) {
         return index + 1
-      })
+      } else if (index <= 300 && index >= 339) {
+        return index - 1
+      } else if (index <= 340 && index >= 379) {
+        return index + 1
+      } else {
+        return index - 1
+      }
+    })
+    objectArray = objectArray.map((index) => {
+      return index + 1
+    })
 
-      objectArray.forEach((index) => {
-        addobjects(index) 
-      })
-      console.log('object array', objectArray)
-    }, 1000)
+    objectArray.forEach((index) => {
+      addobjects(index) 
+    })
+    console.log('object array', objectArray)
+  }, 1000)
     
     
 
