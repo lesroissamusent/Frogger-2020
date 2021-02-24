@@ -31,8 +31,8 @@ function init() {
   const roadSafetyCells = []
   // console.log('roadSafety cells!', roadSafetyCells)
 
-  let life = 3
-  console.log(life)
+  let lives = 3
+  
   let points = 0
     
   // * froggy froggy 
@@ -46,7 +46,6 @@ function init() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
       cell.textContent = i //innerText
-      myLives.textContent = life
       grid.appendChild(cell)
       cells.push(cell) //add cells to array 'cells'
     }
@@ -159,7 +158,7 @@ function init() {
     // console.log('obstacles', obstacleStartPosition)
   }
 
-  function ObstacleRowOneTimer() {
+  function obstacleRowOneTimer() {
     
     const obstacleTimer = setInterval(() => {
       obstacleArrayOne.forEach((index) => {
@@ -382,7 +381,7 @@ function init() {
   
   function startGame() {
     
-    ObstacleRowOneTimer()
+    obstacleRowOneTimer()
     obstacleRowTwoTimer()
     obstacleRowThreeTimer()
     obstacleRowFourtimer()
@@ -390,29 +389,42 @@ function init() {
     objectRowOneTimer()
     objectRowTwoTimer()
     objectRowThreeTimer()
-    objectRowFourTimer()
+    objectRowFourTimer() 
+    
   }
 
   function collision() {
-    
-    if (cells[frogCurrentPosition].classList.contains('obstacles')) {
+    if (lives < 1) {
+      console.log('lives', lives)
+      gameOver()
+    } else if (cells[frogCurrentPosition].classList.contains('obstacles')) {
       console.log('ouch')
-      life--
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)
       frogCurrentPosition = 449
+      lives -= 1
+      points -= 10
+      console.log('points', points)
     } else if (cells[frogCurrentPosition].classList.contains('water')) {
       console.log('glug glug')
-      life--
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)
       frogCurrentPosition = 449
+      lives -= 1
+      points -= 10
     } else {
       console.log('nothing to see here')
     }
+    myPoints.innerHTML = points
+    myLives.innerHTML = lives
+    
   }
-
-
+  function gameOver() {
+    removeFrog(frogCurrentPosition) 
+    console.log('you died dummy')
+  }
+  
+  
 
   start.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
