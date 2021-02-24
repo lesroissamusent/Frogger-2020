@@ -401,6 +401,12 @@ function init() {
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)
       frogCurrentPosition = 449
+    } else if (cells[frogCurrentPosition].classList.contains('water')) {
+      console.log('glug glug')
+      life--
+      removeFrog(frogCurrentPosition) 
+      addFrog(frogStartPosition)
+      frogCurrentPosition = 449
     } else {
       console.log('nothing to see here')
     }
