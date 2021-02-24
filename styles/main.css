@@ -54,7 +54,7 @@ div.header {
   width: 5%;
 }
 
-.grid div.frog {
+.frog {
   background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -70,9 +70,15 @@ footer {
 .water {
   background-color: rgb(84, 166, 254);
 }
+
 .safety-pads {
-  background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
-  background-position: 10em;
+  background-image: url('../assets/PinClipart.com_lily-pad-clipart_5250322.png');
+  /* background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png'); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  /* background-attachment:scroll;
+  background-position: 5em; */
   /* background-color: rgb(7, 145, 23); */
   /* border-radius: 6px; */
   /* border-width: 2px;
@@ -91,15 +97,18 @@ footer {
   background-color: rgb(254, 211, 103);
 }
 .obstacles {
+  background-image: url('../assets/PinClipart.com_lily-pad-clipart_5250322.png');
+  /* background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png'); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
   /* background-color: rgb(184, 57, 11); */
   /* background-image: url('../assets/animated-car-gif-png.png'); */
-  background-color: brown;
+  /* background-color: brown; */
 }
 .objects {
   background-color: rgb(19, 106, 43);
 }
-
-
 
 .start {
   background-color: rgb(254, 211, 103);
