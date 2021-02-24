@@ -405,6 +405,8 @@ function init() {
       lives -= 1
       points -= 10
       console.log('points', points)
+    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) {
+      console.log('lets be friends')
     } else if (cells[frogCurrentPosition].classList.contains('water')) {
       console.log('glug glug')
       removeFrog(frogCurrentPosition) 
