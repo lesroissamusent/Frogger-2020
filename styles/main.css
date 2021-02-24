@@ -91,9 +91,10 @@ footer {
   /* background-color: rgb(184, 57, 11); */
   /* background-image: url('../assets/animated-car-gif-png.png'); */
   background-color: brown;
-
 }
-
+.objects {
+  background-color: rgb(19, 106, 43);
+}
 
 
 
@@ -108,12 +109,3 @@ footer {
 
 
 
-/*  
-
-
-.objects {
-  background-color: rgb(92, 76, 42);
-}
-
-
-*/
