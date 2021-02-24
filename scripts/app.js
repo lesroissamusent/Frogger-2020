@@ -237,11 +237,11 @@ function init() {
       })
 
       obstacleArrayFour = obstacleArrayFour.map((index) => {
-        if ((index + 1) % width === 0) {
+        if ((index - 1) % width === 0) { 
           console.log('here')
-          return index - (width - 1)
+          return index + (width - 1)
         } else {
-          return index + 1
+          return index - 1
         } 
       })
       obstacleArrayFour.forEach((index) => {
