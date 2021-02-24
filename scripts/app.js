@@ -147,8 +147,16 @@ function init() {
   // * Obstacles
   const obstacleClass = 'obstacles'
 
-  let obstacleArray = [260, 280, 261, 281, 319, 318, 317, 339, 338, 337, 340, 341, 360, 361, 399, 398, 397, 419, 418, 417]
+  // let obstacleArray = [, , , , ]
   let obstacleArrayOne = [260, 280, 261, 281]
+  let obstacleArrayTwo = [319, 318, 317,339, 338, 337]
+  let obstacleArrayThree = [340, 341, 360, 361]
+  let obstacleArrayFour = [399, 398, 397,419, 418, 417]
+  // let obstacleArrayOne = []
+  // let obstacleArrayOne = []
+  // let obstacleArrayOne = []
+  // let obstacleArrayOne = []
+
 
   function removeObstacles(position) { 
     cells[position].classList.remove(obstacleClass)
@@ -180,9 +188,85 @@ function init() {
     }, 500)
   }
 
+  function rowTwoTimer() {
+    const obstacleTimer = setInterval(() => {
+      obstacleArrayTwo.forEach((index) => {
+        removeObstacles(index) 
+      })
+
+      obstacleArrayTwo = obstacleArrayTwo.map((index) => {
+        if ((index + 1) % width === 0) {
+          console.log('here')
+          return index - (width - 1)
+        } else {
+          return index + 1
+        } 
+      })
+      obstacleArrayTwo.forEach((index) => {
+        addObstacles(index) 
+      })
+      console.log('obstacle array Two', obstacleArrayTwo)
+    }, 500)
+  }
+
+  function rowThreeTimer() {
+    const obstacleTimer = setInterval(() => {
+      obstacleArrayThree.forEach((index) => {
+        removeObstacles(index) 
+      })
+
+      obstacleArrayThree = obstacleArrayThree.map((index) => {
+        if ((index + 1) % width === 0) {
+          console.log('here')
+          return index - (width - 1)
+        } else {
+          return index + 1
+        } 
+      })
+      obstacleArrayThree.forEach((index) => {
+        addObstacles(index) 
+      })
+      console.log('obstacle array Three', obstacleArrayThree)
+    }, 500)
+  }
+
+  function rowFourTimer() {
+    const obstacleTimer = setInterval(() => {
+      obstacleArrayFour.forEach((index) => {
+        removeObstacles(index) 
+      })
+
+      obstacleArrayFour = obstacleArrayFour.map((index) => {
+        if ((index + 1) % width === 0) {
+          console.log('here')
+          return index - (width - 1)
+        } else {
+          return index + 1
+        } 
+      })
+      obstacleArrayFour.forEach((index) => {
+        addObstacles(index) 
+      })
+      console.log('obstacle array Four', obstacleArrayFour)
+    }, 500)
+  }
+
+
+
+
+
+
+
+
+
+
+
 
   function startGame() {
     rowOneTimer()
+    rowTwoTimer()
+    rowThreeTimer()
+    rowFourTimer()
     // const obstacleTimer = setInterval(() => {
     //   obstacleArray.forEach((index) => {
     //     removeObstacles(index) 
