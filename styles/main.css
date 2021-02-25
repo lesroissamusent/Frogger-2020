@@ -9,13 +9,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+
   
   /* font-family: 'ABeeZee', sans-serif; */
   font-family: 'Exo', sans-serif;
 }
 
 .start-screen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 100px;
+  border-width: 4px;
+  border-color: black;
+  border-style: double;
+}
+
+.game-end {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -62,18 +75,20 @@ div.header {
   /* height: 600px; */
   width: 600px;
   background-color: white;
+  padding: 0;
+  margin: 20px 0;
 }
 
 .grid div {
   /* border: 1px solid lightgrey; */
   flex-grow: 1;
-  height: 5%;
-  width: 5%;
+  height: 4.8%;
+  width: 4.8%;
 }
 
 footer {
   background-color: cornflowerblue;
-  margin-top: 90px;
+  margin-top: 65px;
   width: 600px;
 }
 
@@ -95,18 +110,18 @@ footer {
   background-color: rgb(254, 211, 103);
 }
 .road {
-  background-image: url('../assets/road.png');
+  /* background-image: url('../assets/road.png'); */
   background-attachment:fixed;
-  /* background-color: rgb(177, 177, 177); */
+  background-color: rgb(177, 177, 177);
 }
 .road-safety {
   background-color: rgb(254, 211, 103);
 }
 .obstacles {
-  background-image: url('../assets/PinClipart.com_lily-pad-clipart_5250322.png');
+  background-image: url(../assets/coronavirus-5107715_1920.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: initial; /* what does this do??? */
+  background-size: contain;
+  background-attachment: inherit;
 }
 .objects {
   background-color: rgb(19, 106, 43);
@@ -122,6 +137,14 @@ footer {
 
 .start {
   /* background-color:: */
+  font-family: 'Exo', sans-serif;
+  width: 150px;
+  height: 50px;
+  margin: 50px 0;
+  font-size: x-large;
+}
+
+.reset {
   font-family: 'Exo', sans-serif;
   width: 150px;
   height: 50px;
