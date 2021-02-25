@@ -52,6 +52,7 @@ function init() {
     main.classList.add('hidden')
     footer.classList.add('hidden')
     gameEnd.classList.add('hidden')
+    
   }
 
 
@@ -419,7 +420,7 @@ function init() {
   
 
     if (lives < 1) {
-      console.log('lives', lives)
+      // console.log('lives', lives)
       gameOver()
       // OBSTACLES
     } else if (cells[frogCurrentPosition].classList.contains('obstacles')) {
@@ -471,11 +472,12 @@ function init() {
     header.classList.add('hidden')
     main.classList.add('hidden')
     footer.classList.add('hidden')
-    
+    finalScore.innerHTML = points
+    console.log('final points', points)
     gameEnd.classList.remove('hidden')
     // reset.classList.remove('hidden')
     // console.log('you died dummy')
-    finalScore.textContent = myPoints
+    
   }
   function resetGame() {
     window.location.reload()
