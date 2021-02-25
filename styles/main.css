@@ -106,10 +106,12 @@ footer {
 .start {
   background-color: rgb(254, 211, 103);
 }
-.game-over {
+.hidden {
   display: none;
 }
-
+/* .game-over {
+  display: none;
+} */
 
 
 

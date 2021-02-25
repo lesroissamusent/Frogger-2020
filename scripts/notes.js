@@ -36,30 +36,29 @@
   ///// ! space bar for jumps on water objects? space bar key = 2 x cell movement?
 
 // * Car Obstacles
-  // use class for obstacles
-  // new class for each line of moving cars
+  //// use class for obstacles
+  //// new class for each line of moving cars
     // different speeds
     // ! speed to change with difficulty level?
-    // different directions
-    // different sizes --- consider how to group cells together to create objects of different sizes.
- // timer (setInterval?) for obstacle movement.
+    //// different directions
+    //// different sizes --- consider how to group cells together to create objects of different sizes.
+ //// timer (setInterval?) for obstacle movement.
 
 
 // * Water Objects
-  // use classes for objects
-    // different speeds
+  //// use classes for objects
+    //// different speeds
     // ! speed to change with difficulty level?
-    // different directions (only x-axis)
-    // different sizes --- consider how to group cells together to create objects of different sizes.
-    // ! objects that submerge? assigned new class?
+    //// different directions (only x-axis)
+    //// different sizes --- consider how to group cells together to create objects of different sizes.
   // consider how to connect frog to objects as they are mounted. - give frog class of object? 
 
 
 // * Safety pads
   //// 4 x safety pads
   //// area surrounding pads can be same class as water to be off limits
-  // new frog introduced when current frog reaches a pad.
-  // 100 points when frog reaches pad? Maybe no points / pass-fail.? unsure.  // ! Speed bonus? is that achievable? Start timer at beginning of game. conditional statement with set bands?
+  //// new frog introduced when current frog reaches a pad.
+  //// 100 points when frog reaches pad? Maybe no points / pass-fail.? unsure.  // ! Speed bonus? is that achievable? Start timer at beginning of game. conditional statement with set bands?
   // pad cannot accommodate more than one frog.
   // ! Sensitivity of pad area could be adjusted by adjusting pad size?
   // ! flies for extra points? could create a class to be assigned randomly to a pad at certain intervals. if frog takes pad space which = fly class more points?
@@ -68,15 +67,15 @@
 // * Off limits areas
  //// use current position for grid edges
     //// conditional statement
- // use classes for objects?
+ //// use classes for objects?
  //// use classes for water?
 
 // * Lives + points
-  // frog class returns to starting Position when it dies.
-  // 100 points when frog reaches pad.
-  // 5 points for moving up a space?
-  // 3 lifes in total, when all lives gone game over
-  // if life value = 0, stop game
+  //// frog class returns to starting Position when it dies.
+  //// 100 points when frog reaches pad.
+  //// 5 points for moving up a space?
+  //// 3 lifes in total, when all lives gone game over
+  //// if life value = 0, stop game
 
   // when game over, alert final score
   // remove main content and pop up final score + restart button
@@ -84,6 +83,28 @@
     //display: none class
 
 
+    function resetGame() {
+      window.location.reload()
+    }
+    reset.addEventListener('click', resetGame)
+
+    function startGame() {
+      clearInterval(randomMole)
+      start.classList.add('hidden')
+      main.classList.remove('hidden')
+  
+      function gameOver() {
+        header.classList.add('hidden')
+        main.classList.add('hidden')
+        endScore.innerHTML = points
+        gameEnd.classList.remove('game-over')
+        reset.classList.remove('hidden')
+      }
+      function resetGame() {
+        window.location.reload()
+      }
+      reset.addEventListener('click', resetGame)
+  
 
 
 

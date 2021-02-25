@@ -1,7 +1,14 @@
 function init() {
   // * grid
-  const start = document.querySelector('.start')
+  const start = document.querySelector('.start-screen')
+  const startButton = document.querySelector('.start')
   const pause = document.querySelector('.pause')
+  const header = document.querySelector('header')
+  const main = document.querySelector('main')
+  const footer = document.querySelector('footer')
+  const gameEnd = document.querySelector('.game-end')
+  const finalScore = document.querySelector('.final-score')
+  const resetButton = document.querySelector('.reset')
   const grid = document.querySelector('.grid') // grab grid
   const myPoints = document.querySelector('.points')
   const myLives = document.querySelector('.lives')
@@ -33,13 +40,19 @@ function init() {
   // console.log('roadSafety cells!', roadSafetyCells)
 
   let lives = 3
-  
   let points = 0
     
   // * froggy froggy 
   const frogClass = 'frog'
   const frogStartPosition = 449
   let frogCurrentPosition = 449
+
+  function atStart() {
+    header.classList.add('hidden')
+    main.classList.add('hidden')
+    footer.classList.add('hidden')
+    gameEnd.classList.add('hidden')
+  }
 
 
   // * Make a grid
@@ -382,7 +395,13 @@ function init() {
   }
   
   function startGame() {
-    
+    start.classList.add('hidden')
+    header.classList.remove('hidden')
+    main.classList.remove('hidden')
+    footer.classList.remove('hidden')
+
+
+
     obstacleRowOneTimer()
     obstacleRowTwoTimer()
     obstacleRowThreeTimer()
@@ -449,12 +468,23 @@ function init() {
   }
 
   function gameOver() {
-    removeFrog(frogCurrentPosition) 
-    console.log('you died dummy')
+    header.classList.add('hidden')
+    main.classList.add('hidden')
+    footer.classList.add('hidden')
+    
+    gameEnd.classList.remove('hidden')
+    // reset.classList.remove('hidden')
+    // console.log('you died dummy')
+    finalScore.textContent = myPoints
   }
-  start.addEventListener('click', startGame)
+  function resetGame() {
+    window.location.reload()
+  }
+  resetButton.addEventListener('click', resetGame)
+  startButton.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
   createGrid() 
+  atStart()
 }
 
 window.addEventListener('DOMContentLoaded', init)
