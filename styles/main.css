@@ -4,15 +4,28 @@
 
 body {
   height: 100vh;
+  /* width: fit-content; */
   margin: 0;
   background-color: white;
+  align-content: center;
+
+  /* font-family: 'ABeeZee', sans-serif; */
+  font-family: 'Exo', sans-serif;
+}
+.page-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  
-  /* font-family: 'ABeeZee', sans-serif; */
-  font-family: 'Exo', sans-serif;
+  /* border-width: 2px;
+  border-color: black;
+  border-style: solid; */
+}
+
+main {
+  /* border-width: 4px;
+  border-color: black;
+  border-style: double; */
 }
 
 .start-screen {
@@ -22,10 +35,15 @@ body {
   width: 600px;
   text-align: center;
   padding: 20px;
+  margin: auto;
   margin-top: 100px;
   border-width: 4px;
   border-color: black;
   border-style: double;
+}
+
+p.small {
+  font-size: 14px;
 }
 
 .game-end {
@@ -42,7 +60,7 @@ body {
 }
 
 header {
-  background-color: darkcyan;
+  /* background-color: darkcyan; */
   width: 600px;
   height: 150px;
   display: flex;
@@ -51,13 +69,40 @@ header {
   align-items: center;
 }
 
+h1 {
+  font-size: 45px;
+  margin-bottom: 0px;
+  margin-top: 30px;
+}
+
 div.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   width: 600px;
+  height: 50px;
+  margin-bottom: 30px;
 }
+
+div.player-data {
+  flex-direction: row;
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: larger;
+
+}
+
+.pause {
+  font-family: 'Exo', sans-serif;
+  width: 90px;
+  height: 40px;
+  margin: 20px 0 10px;
+  font-size: larger;
+}
+
 .grid-wrapper {
   height: 65vh;
   display: flex;
@@ -87,7 +132,7 @@ div.header {
 }
 
 footer {
-  background-color: cornflowerblue;
+  /* background-color: cornflowerblue; */
   margin-top: 65px;
   width: 600px;
 }
