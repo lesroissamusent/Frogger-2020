@@ -54,13 +54,6 @@ div.header {
   width: 5%;
 }
 
-.frog {
-  background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: pointer;
-}
-
 footer {
   background-color: cornflowerblue;
   margin-top: 90px;
@@ -96,10 +89,18 @@ footer {
   background-image: url('../assets/PinClipart.com_lily-pad-clipart_5250322.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: initial;
+  background-attachment: initial; /* what does this do??? */
 }
 .objects {
   background-color: rgb(19, 106, 43);
+}
+
+.frog {
+  background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: initial;
+  cursor: pointer;
 }
 
 .start {

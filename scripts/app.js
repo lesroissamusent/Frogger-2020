@@ -393,9 +393,12 @@ function init() {
     objectRowThreeTimer()
     objectRowFourTimer() 
     
+    
   }
 
   function gameRules() {
+  
+
     if (lives < 1) {
       console.log('lives', lives)
       gameOver()
@@ -409,12 +412,25 @@ function init() {
       points -= 10
       console.log('points', points)
       // OBJECTS
-    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects') && cells[frogCurrentPosition].classList.contains('frog')) {
-      if (frogCurrentPosition >= 180 && frogCurrentPosition < 200) {
-        console.log('WHOOOPIE')
-      } else {
-        console.log('try again')
-      }
+    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) { //?&& cells[frogCurrentPosition].classList.contains('frog')) 
+      //? if (frogCurrentPosition >= 180 && frogCurrentPosition < 200) {
+      //?const frogObjectTimerFour = setInterval(() => {
+      //?console.log('WHOOOPIE')
+      //?removeFrog(frogCurrentPosition)    
+      //?frogCurrentPosition - 1
+      //?return addFrog(frogCurrentPosition)
+      //?}, 500)
+      //?} else {
+      //?console.log('try again')
+      //?}
+      console.log('safe')
+      // SAFETYPADS
+    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
+      removeFrog(frogCurrentPosition) 
+      addFrog(frogStartPosition)
+      frogCurrentPosition = 449
+      // cells[frogCurrentPosition].classList.add(frogSafeClass)
+      points += 50
       // WATER
     } else if (cells[frogCurrentPosition].classList.contains('water')) {
       console.log('glug glug')
@@ -423,27 +439,19 @@ function init() {
       frogCurrentPosition = 449
       lives -= 1
       points -= 10
-      // SAFETYPADS
-    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
-      removeFrog(frogCurrentPosition) 
-      addFrog(frogStartPosition)
-      frogCurrentPosition = 449
-      // cells[frogCurrentPosition].classList.add(frogSafeClass)
-      points += 50
     } else {
       console.log('nothing to see here')
     }
+  
     myPoints.innerHTML = points
     myLives.innerHTML = lives
     
   }
+
   function gameOver() {
     removeFrog(frogCurrentPosition) 
     console.log('you died dummy')
   }
-  
-  
-
   start.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
   createGrid() 
