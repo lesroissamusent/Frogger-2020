@@ -14,7 +14,7 @@ function init() {
   const safetyPadClass = 'safety-pads'
   const safetyPadCells = [1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38]
   // console.log('safetypad cells!', safetyPadCells)
-  const frogSafeClass = 'safety-with-frog'
+  // const frogSafeClass = 'safety-with-frog'
 
   const waterClass = 'water'
   const waterCells = []
@@ -399,6 +399,7 @@ function init() {
     if (lives < 1) {
       console.log('lives', lives)
       gameOver()
+      // OBSTACLES
     } else if (cells[frogCurrentPosition].classList.contains('obstacles')) {
       console.log('ouch')
       removeFrog(frogCurrentPosition) 
@@ -407,8 +408,14 @@ function init() {
       lives -= 1
       points -= 10
       console.log('points', points)
-    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) {
-      console.log('lets be friends')
+      // OBJECTS
+    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects') && cells[frogCurrentPosition].classList.contains('frog')) {
+      if (frogCurrentPosition >= 180 && frogCurrentPosition < 200) {
+        console.log('WHOOOPIE')
+      } else {
+        console.log('try again')
+      }
+      // WATER
     } else if (cells[frogCurrentPosition].classList.contains('water')) {
       console.log('glug glug')
       removeFrog(frogCurrentPosition) 
@@ -416,11 +423,12 @@ function init() {
       frogCurrentPosition = 449
       lives -= 1
       points -= 10
+      // SAFETYPADS
     } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)
       frogCurrentPosition = 449
-      cells[frogCurrentPosition].classList.add(frogSafeClass)
+      // cells[frogCurrentPosition].classList.add(frogSafeClass)
       points += 50
     } else {
       console.log('nothing to see here')
