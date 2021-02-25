@@ -17,7 +17,6 @@ function init() {
   const cellCount = width * height // number of cells
   const cells = []
 
-  // * game elements
   const safetyPadClass = 'safety-pads'
   const safetyPadCells = [1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26, 29, 30, 33, 34, 37, 38]
   // console.log('safetypad cells!', safetyPadCells)
@@ -47,20 +46,24 @@ function init() {
   const frogStartPosition = 449
   let frogCurrentPosition = 449
 
+
+
+
   function atStart() {
     header.classList.add('hidden')
     main.classList.add('hidden')
     footer.classList.add('hidden')
     gameEnd.classList.add('hidden')
-    
   }
 
+
+  // * GRIDDDDDDD
 
   // * Make a grid
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      // cell.textContent = i //innerText
+      cell.textContent = i //innerText
       grid.appendChild(cell)
       cells.push(cell) //add cells to array 'cells'
     }
@@ -156,13 +159,15 @@ function init() {
     console.log('frog!', frogCurrentPosition)
   }
 
+
+
   // * OBSTACLESSSSSS
   const obstacleClass = 'obstacles'
 
-  let obstacleArrayOne = [260, 280, 261, 281]
-  let obstacleArrayTwo = [319, 318, 317,339, 338, 337]
+  let obstacleArrayOne = [260, 261, 262, 280, 281, 282, 270, 290, 271, 291]
+  let obstacleArrayTwo = [319, 318, 317, 339, 338, 337, 312, 313, 332, 333]
   let obstacleArrayThree = [340, 341, 360, 361]
-  let obstacleArrayFour = [399, 398, 397,419, 418, 417]
+  let obstacleArrayFour = [282, 283, 284, 402, 403, 404, 399, 398, 397, 419, 418, 417]
 
   function removeObstacles(position) { 
     cells[position].classList.remove(obstacleClass)
@@ -193,7 +198,7 @@ function init() {
         gameRules()
       })
       // console.log('obstacle array One', obstacleArrayOne)
-    }, 500)
+    }, 300)
 
     function pauseGame() {
       clearInterval(obstacleTimer)
@@ -220,7 +225,7 @@ function init() {
         addObstacles(index) 
       })
       // console.log('obstacle array Two', obstacleArrayTwo)
-    }, 500)
+    }, 600)
     function pauseGame() {
       clearInterval(obstacleTimer)
       // clearInterval(obstacleTimer)
@@ -246,7 +251,7 @@ function init() {
         addObstacles(index) 
       })
       // console.log('obstacle array Three', obstacleArrayThree)
-    }, 500)
+    }, 400)
     function pauseGame() {
       clearInterval(obstacleTimer)
       // clearInterval(obstacleTimer)
@@ -272,13 +277,15 @@ function init() {
         addObstacles(index) 
       })
       // console.log('obstacle array Four', obstacleArrayFour)
-    }, 500)
+    }, 300)
     function pauseGame() {
       clearInterval(obstacleTimer)
       // clearInterval(obstacleTimer)
     }
     pause.addEventListener('click', pauseGame)
   }
+
+
 
   // * OBJECTSSSSSS
   const objectClass = 'objects'
@@ -394,7 +401,9 @@ function init() {
     }
     pause.addEventListener('click', pauseGame)
   }
-  
+
+
+
   function startGame() {
     start.classList.add('hidden')
     header.classList.remove('hidden')
@@ -415,7 +424,6 @@ function init() {
     
     
   }
-
   function gameRules() {
   
 
@@ -467,7 +475,6 @@ function init() {
     myLives.innerHTML = lives
     
   }
-
   function gameOver() {
     header.classList.add('hidden')
     main.classList.add('hidden')
@@ -482,6 +489,9 @@ function init() {
   function resetGame() {
     window.location.reload()
   }
+
+
+
   resetButton.addEventListener('click', resetGame)
   startButton.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
