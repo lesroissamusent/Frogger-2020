@@ -9,6 +9,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 100px;
+  
+  /* font-family: 'ABeeZee', sans-serif; */
+  font-family: 'Exo', sans-serif;
+}
+
+.start-screen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  text-align: center;
+  padding: 20px;
+
+  border-width: 4px;
+  border-color: black;
+  border-style: double;
 }
 
 header {
@@ -104,7 +121,12 @@ footer {
 }
 
 .start {
-  background-color: rgb(254, 211, 103);
+  /* background-color:: */
+  font-family: 'Exo', sans-serif;
+  width: 150px;
+  height: 50px;
+  margin: 50px 0;
+  font-size: x-large;
 }
 .hidden {
   display: none;

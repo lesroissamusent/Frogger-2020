@@ -63,7 +63,7 @@ function init() {
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.textContent = i //innerText
+      // cell.textContent = i //innerText
       grid.appendChild(cell)
       cells.push(cell) //add cells to array 'cells'
     }
@@ -167,7 +167,7 @@ function init() {
   let obstacleArrayOne = [260, 261, 262, 280, 281, 282, 270, 290, 271, 291]
   let obstacleArrayTwo = [319, 318, 317, 339, 338, 337, 312, 313, 332, 333]
   let obstacleArrayThree = [340, 341, 360, 361]
-  let obstacleArrayFour = [282, 283, 284, 402, 403, 404, 399, 398, 397, 419, 418, 417]
+  let obstacleArrayFour = [382, 383, 384, 402, 403, 404, 399, 398, 397, 419, 418, 417]
 
   function removeObstacles(position) { 
     cells[position].classList.remove(obstacleClass)
@@ -319,7 +319,7 @@ function init() {
         addObjects(index) 
       })
       // console.log('object array One', objectArrayOne)
-    }, 500)
+    }, 300)
     function pauseGame() {
       clearInterval(objectTimer)
       // clearInterval(obstacleTimer)
@@ -344,7 +344,7 @@ function init() {
         addObjects(index) 
       })
       // console.log('object array Two', objectArrayTwo)
-    }, 500)
+    }, 700)
     function pauseGame() {
       clearInterval(objectTimer)
       // clearInterval(obstacleTimer)
@@ -369,7 +369,7 @@ function init() {
         addObjects(index) 
       })
       // console.log('object array Three', objectArrayThree)
-    }, 500)
+    }, 600)
     function pauseGame() {
       clearInterval(objectTimer)
       // clearInterval(obstacleTimer)

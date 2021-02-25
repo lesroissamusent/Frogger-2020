@@ -83,28 +83,28 @@
     //display: none class
 
 
-    function resetGame() {
-      window.location.reload()
-    }
-    reset.addEventListener('click', resetGame)
+  //   function resetGame() {
+  //     window.location.reload()
+  //   }
+  //   reset.addEventListener('click', resetGame)
 
-    function startGame() {
-      clearInterval(randomMole)
-      start.classList.add('hidden')
-      main.classList.remove('hidden')
+  //   function startGame() {
+  //     clearInterval(randomMole)
+  //     start.classList.add('hidden')
+  //     main.classList.remove('hidden')
   
-      function gameOver() {
-        header.classList.add('hidden')
-        main.classList.add('hidden')
-        endScore.innerHTML = points
-        gameEnd.classList.remove('game-over')
-        reset.classList.remove('hidden')
-      }
-      function resetGame() {
-        window.location.reload()
-      }
-      reset.addEventListener('click', resetGame)
-  
+  //     function gameOver() {
+  //       header.classList.add('hidden')
+  //       main.classList.add('hidden')
+  //       endScore.innerHTML = points
+  //       gameEnd.classList.remove('game-over')
+  //       reset.classList.remove('hidden')
+  //     }
+  //     function resetGame() {
+  //       window.location.reload()
+  //     }
+  //     reset.addEventListener('click', resetGame)
+  // }
 
 
 
