@@ -192,7 +192,10 @@ div.obstacles {
   background-attachment: inherit;
 }
 div.objects {
-  background-color: rgb(19, 106, 43);
+  background-image: url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png);
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-size: cover;
 }
 
 .frog {
