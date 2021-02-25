@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
+/* 
 .bg-pan-left {
 	-webkit-animation: bg-pan-left 20s linear infinite both;
 	        animation: bg-pan-left 20s linear infinite both;
-}
+} */
 
 body {
   height: 100vh;
@@ -16,6 +16,7 @@ body {
 
   /* font-family: 'ABeeZee', sans-serif; */
   font-family: 'Exo', sans-serif;
+  color: whitesmoke;
 }
 .page-contents {
   display: flex;
@@ -43,8 +44,9 @@ main {
   margin: auto;
   margin-top: 100px;
   border-width: 4px;
-  border-color: black;
+  color:rgb(52, 61, 65);
   border-style: double;
+  background-color: whitesmoke;
 }
 
 p.small {
@@ -152,31 +154,45 @@ footer {
   /* background-color: cornflowerblue; */
   margin-top: 65px;
   width: 600px;
+  text-align: center;
+  color: whitesmoke;
 }
 
 div.water {
   background-color: rgb(84, 166, 254);
+  background-image: url('../assets/pngkey.com-patterns-png-920610.png');
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 div.safety-pads {
   background-image: url('../assets/PinClipart.com_lily-pad-clipart_5250322.png');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  /* ; */
 
 }
-div.safety-with-frog {
+/* div.safety-with-frog {
   background-color: red;
-}
+} */
 div.water-safety {
-  background-color: rgb(254, 211, 103);
+  background-color: rgb(249, 139, 71);
   border-radius: 5px;
 }
 div.road {
-  /* background-image: url('../assets/road.png'); */
+  background-image: url(../assets/road.png);
   background-attachment:fixed;
-  background-color: rgb(255, 242, 231);
+  background-size: cover;
+  /* background-color: rgb(164, 188, 205); */
 }
+div.frog.road {
+  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png), url(../assets/road.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: initial;
+}
+
+
 div.road-safety  {
   background-color: rgb(249, 139, 71);
 
@@ -197,13 +213,15 @@ div.objects {
   background-attachment: initial;
   background-size: cover;
 }
-
+div.objects.water.frog {
+  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png), url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png), url(../assets/pngkey.com-patterns-png-920610.png)
+}
 .frog {
-  background-image: url('../assets/jing.fm-cute-frog-clipart-160942.png');
+  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: initial;
-  cursor: pointer;
+  ;
 }
 
 .start {

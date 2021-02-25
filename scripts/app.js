@@ -164,12 +164,13 @@ function init() {
   // * OBSTACLESSSSSS
   const obstacleClass = 'obstacles'
 
-  let obstacleArrayOne = [260, 261, 262, 280, 281, 282, 270, 290, 271, 291]
-  let obstacleArrayTwo = [319, 318, 317, 339, 338, 337, 312, 313, 332, 333]
-  let obstacleArrayThree = [340, 341, 360, 361]
-  let obstacleArrayFour = [382, 383, 384, 402, 403, 404, 399, 398, 397, 419, 418, 417]
+  let obstacleArrayOne = [261, 262, 281, 282, 290, 291, 276, 277, 278]
+  let obstacleArrayTwo = [319, 318, 317, 339, 338, 337, 312, 313, 332, 333, 325, 324, 300, 301]
+  let obstacleArrayThree = [340, 341, 360, 361, 370, 371, 377]
+  let obstacleArrayFour = [382, 383, 384, 384, 388, 402, 403, 404, 399, 398, 397, 419, 418, 417]
 
-  function removeObstacles(position) { 
+
+  function removeObstacles(position) {
     cells[position].classList.remove(obstacleClass)
   }
 
