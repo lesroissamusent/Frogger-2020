@@ -2,11 +2,16 @@
   box-sizing: border-box;
 }
 
+.bg-pan-left {
+	-webkit-animation: bg-pan-left 20s linear infinite both;
+	        animation: bg-pan-left 20s linear infinite both;
+}
+
 body {
   height: 100vh;
   /* width: fit-content; */
   margin: 0;
-  background-color: white;
+  background-color: rgb(52, 61, 65);
   align-content: center;
 
   /* font-family: 'ABeeZee', sans-serif; */
@@ -108,9 +113,15 @@ div.player-data {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+ 
 }
 
 .grid {
+  /* border-color: rgb(44, 51, 55);
+  border-width: 5px;
+  border-radius: 5px; */
+  
   align-items: center;
   /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2); */
   display: flex;
@@ -122,6 +133,11 @@ div.player-data {
   background-color: white;
   padding: 0;
   margin: 20px 0;
+  background-color: rgb(52, 61, 65);
+  /* border-color: black;
+  border-width: 5px; */
+  /* border-style: solid; */
+ 
 }
 
 .grid div {
@@ -129,6 +145,7 @@ div.player-data {
   flex-grow: 1;
   height: 4.8%;
   width: 4.8%;
+  /* border-radius: 2px; */
 }
 
 footer {
@@ -137,38 +154,44 @@ footer {
   width: 600px;
 }
 
-.water {
+div.water {
   background-color: rgb(84, 166, 254);
 }
 
-.safety-pads {
+div.safety-pads {
   background-image: url('../assets/PinClipart.com_lily-pad-clipart_5250322.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
 
 }
-.safety-with-frog {
+div.safety-with-frog {
   background-color: red;
 }
-.water-safety {
+div.water-safety {
   background-color: rgb(254, 211, 103);
+  border-radius: 5px;
 }
-.road {
+div.road {
   /* background-image: url('../assets/road.png'); */
   background-attachment:fixed;
-  background-color: rgb(177, 177, 177);
+  background-color: rgb(255, 242, 231);
 }
-.road-safety {
-  background-color: rgb(254, 211, 103);
+div.road-safety  {
+  background-color: rgb(249, 139, 71);
+
+  border-radius: 5px;
+  /* border-color: black;
+  border-width: 5px;
+  border-style: solid; */
 }
-.obstacles {
+div.obstacles {
   background-image: url(../assets/coronavirus-5107715_1920.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: inherit;
 }
-.objects {
+div.objects {
   background-color: rgb(19, 106, 43);
 }
 
