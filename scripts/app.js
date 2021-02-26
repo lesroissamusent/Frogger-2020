@@ -441,19 +441,19 @@ function init() {
       points -= 10
       console.log('points', points)
       // OBJECTS
-    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) { //?&& cells[frogCurrentPosition].classList.contains('frog')) 
-      //? if (frogCurrentPosition >= 180 && frogCurrentPosition < 200) {
-      //?const frogObjectTimerFour = setInterval(() => {
-      //?console.log('WHOOOPIE')
-      //?removeFrog(frogCurrentPosition)    
-      //?frogCurrentPosition - 1
-      //?return addFrog(frogCurrentPosition)
-      //?}, 500)
-      //?} else {
-      //?console.log('try again')
-      //?}
-      console.log('safe')
-      // SAFETYPADS
+    // } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) { //?&& cells[frogCurrentPosition].classList.contains('frog')) 
+    //   if (frogCurrentPosition >= 180 && frogCurrentPosition < 200) {
+    //     const frogObjectTimerFour = setInterval(() => {
+    //       console.log('WHOOOPIE')
+    //       removeFrog(frogCurrentPosition)    
+    //       frogCurrentPosition - 1
+    //       return addFrog(frogCurrentPosition)
+    //     }, 500)
+    //   } else {
+    //     console.log('try again')
+      // }
+      // console.log('safe')
+      // // SAFETYPADS
     } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)

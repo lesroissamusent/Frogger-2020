@@ -179,8 +179,8 @@ div.safety-pads {
   background-color: red;
 } */
 div.water-safety {
-  background-color: rgb(249, 139, 71);
-  border-radius: 5px;
+  background-color: rgb(109, 160, 247);
+  border-radius: 7px;
 }
 div.road {
   /* background-image: url(../assets/road.jpeg); */
@@ -200,9 +200,8 @@ div.frog.road {
 
 
 div.road-safety  {
-  background-color: rgb(249, 139, 71);
-
-  border-radius: 5px;
+  background-color: rgb(109, 160, 247);
+  border-radius: 7px;
   /* border-color: black;
   border-width: 5px;
   border-style: solid; */
