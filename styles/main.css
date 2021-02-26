@@ -183,10 +183,12 @@ div.road {
   /* background-color: rgb(164, 188, 205); */
 }
 div.frog.road {
-  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png), url(../assets/road.png);
+  background-image: url(../assets/PinClipart.com_cute-hopping-frog-clipart_5585811.png), url(../assets/road.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: initial;
+  background-position: center;
+  
 }
 
 
@@ -203,18 +205,23 @@ div.obstacles.road {
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: inherit;
+  background-position: center;
+ 
 }
 div.objects {
   background-image: url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png);
   background-repeat: no-repeat;
   background-attachment: initial;
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
 }
 div.objects.water.frog {
-  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png), url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png), url(../assets/pngkey.com-patterns-png-920610.png);
+  background-image: url(../assets/PinClipart.com_cute-hopping-frog-clipart_5585811.png), url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png), url(../assets/pngkey.com-patterns-png-920610.png);
+  background-position: center;
+  background-size: contain;
 }
 .frog {
-  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png);
+  background-image: url(../assets/PinClipart.com_cute-hopping-frog-clipart_5585811.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: initial;
