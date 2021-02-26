@@ -1,8 +1,7 @@
 function init() {
-  // * grid
+  // * VARIABLES
   const start = document.querySelector('.start-screen')
   const startButton = document.querySelector('.start')
-  // const pause = document.querySelector('.pause')
   const header = document.querySelector('header')
   const main = document.querySelector('main')
   const footer = document.querySelector('footer')
@@ -18,36 +17,26 @@ function init() {
   const cells = []
 
   const safetyPadClass = 'safety-pads'
-  const safetyPadCells = [ 21, 22, 25, 26, 29, 30, 33, 34, 37, 38] //1, 2, 5, 6, 9, 10, 13, 14, 17, 18,//
-  // console.log('safetypad cells!', safetyPadCells)
-  // const frogSafeClass = 'safety-with-frog'
+  const safetyPadCells = [ 21, 22, 25, 26, 29, 30, 33, 34, 37, 38]
 
   const waterClass = 'water'
   const waterCells = []
-  // console.log('water cells!', waterCells)
 
   const waterSafetyClass = 'water-safety'
   const waterSafetyCells = []
-  // console.log('waterSafety cells!', waterSafetyCells)
 
   const roadClass = 'road'
   const roadCells = []
-  // console.log('road cells!', roadCells)
 
   const roadSafetyClass = 'road-safety'
   const roadSafetyCells = []
-  // console.log('roadSafety cells!', roadSafetyCells)
 
-  let lives = 3
-  let points = 0
-    
-  // * froggy froggy 
   const frogClass = 'frog'
   const frogStartPosition = 449
   let frogCurrentPosition = 449
 
-
-
+  let lives = 3
+  let points = 0
 
   function atStart() {
     header.classList.add('hidden')
@@ -56,10 +45,9 @@ function init() {
     gameEnd.classList.add('hidden')
   }
 
-
   // * GRIDDDDDDD
 
-  // * Make a grid
+  // Make a grid
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
@@ -69,19 +57,15 @@ function init() {
     }
     for (let i = 0; i < 220; i++) {
       waterCells.push(i)
-      // console.log(i)
     }
     for (let i = 220; i < 260; i++) {
       waterSafetyCells.push(i)
-      // console.log(i)
     }
     for (let i = 260; i < 420; i++) {
       roadCells.push(i)
-      // console.log(i)
     }
     for (let i = 420; i < 460; i++) {
       roadSafetyCells.push(i)
-      // console.log(i)
     }
 
     addSafetyPads(safetyPadCells)
@@ -92,47 +76,47 @@ function init() {
     addRoadSafety(roadSafetyCells)
     
   }
-  // * Add Water to grid
+  // Add Water to grid
   function addWater() {
     waterCells.forEach(position => {
       cells[position].classList.add(waterClass) 
     })
   }
-  // * Add safetypads to grid
+  // Add safetypads to grid
   function addSafetyPads() {
     safetyPadCells.forEach(position => {
       cells[position].classList.add(safetyPadClass) 
     })
   }
-  // * Add waterSafety to grid
+  // Add waterSafety to grid
   function addWaterSafety() {
     waterSafetyCells.forEach(position => {
       cells[position].classList.add(waterSafetyClass) 
     })
   }
-  // * Add road to grid
+  // Add road to grid
   function addRoad() {
     roadCells.forEach(position => {
       cells[position].classList.add(roadClass) 
     })
   }
-  // * Add roadSafety to grid
+  // Add roadSafety to grid
   function addRoadSafety() {
     roadSafetyCells.forEach(position => {
       cells[position].classList.add(roadSafetyClass) 
     })
   }
-  // * Add frog to grid
-  function addFrog(position) { //position makes it reusable, you could add current position or start position or a random index for a random position.
+  // Add frog to grid
+  function addFrog(position) { 
     cells[position].classList.add(frogClass) //add css Frog class
   }
-  // * Remove frog from the grid 
+  // Remove frog from the grid 
   function removeFrog(position) { 
     cells[position].classList.remove(frogClass)
   }
-  // * Move frog
+  // Move frog
   function handleKeyDown(event) {
-    const key = event.keyCode // recognises that you are pressing keys and which key it is
+    const key = event.keyCode 
 
     // * 1. remove frog
     removeFrog(frogCurrentPosition) 
@@ -159,8 +143,6 @@ function init() {
     console.log('frog!', frogCurrentPosition)
   }
 
-
-
   // * OBSTACLESSSSSS
   const obstacleClass = 'obstacles'
 
@@ -169,14 +151,12 @@ function init() {
   let obstacleArrayThree = [340, 341, 360, 361, 370, 371, 377]
   let obstacleArrayFour = [382, 383, 384, 384, 388, 402, 403, 404, 399, 398, 397, 419, 418, 417]
 
-
   function removeObstacles(position) {
     cells[position].classList.remove(obstacleClass)
   }
 
   function addObstacles(position) {
     cells[position].classList.add(obstacleClass)
-    // console.log('obstacles', obstacleStartPosition)
   }
 
   function obstacleRowOneTimer() {
@@ -188,7 +168,6 @@ function init() {
 
       obstacleArrayOne = obstacleArrayOne.map((index) => {
         if ((index + 1) % width === 0) {
-          // console.log('here')
           return index - (width - 1)
         } else {
           return index + 1
@@ -198,14 +177,7 @@ function init() {
         addObstacles(index) 
         gameRules()
       })
-      // console.log('obstacle array One', obstacleArrayOne)
     }, 300)
-
-    // function pauseGame() {
-    // clearInterval(obstacleTimer)
-    //   // clearInterval(obstacleTimer)
-    // }
-    // // pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowTwoTimer() {
@@ -216,7 +188,6 @@ function init() {
 
       obstacleArrayTwo = obstacleArrayTwo.map((index) => {
         if (index % width === 0) { 
-          // console.log('here')
           return index + (width - 1)
         } else {
           return index - 1
@@ -225,13 +196,7 @@ function init() {
       obstacleArrayTwo.forEach((index) => {
         addObstacles(index) 
       })
-      // console.log('obstacle array Two', obstacleArrayTwo)
     }, 600)
-    // function pauseGame() {
-    // clearInterval(obstacleTimer)
-    // clearInterval(obstacleTimer)
-    // }
-    // // pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowThreeTimer() {
@@ -242,7 +207,6 @@ function init() {
 
       obstacleArrayThree = obstacleArrayThree.map((index) => {
         if ((index + 1) % width === 0) {
-          // console.log('here')
           return index - (width - 1)
         } else {
           return index + 1
@@ -251,14 +215,8 @@ function init() {
       obstacleArrayThree.forEach((index) => {
         addObstacles(index) 
       })
-      // console.log('obstacle array Three', obstacleArrayThree)
     }, 400)
-    // function pauseGame() {
-    // clearInterval(obstacleTimer)
-    // clearInterval(obstacleTimer)
   }
-  // pause.addEventListener('click', pauseGame)
-  // }
 
   function obstacleRowFourtimer() {
     setInterval(() => {
@@ -268,7 +226,6 @@ function init() {
 
       obstacleArrayFour = obstacleArrayFour.map((index) => {
         if (index % width === 0) { 
-          // console.log('here')
           return index + (width - 1)
         } else {
           return index - 1
@@ -277,16 +234,8 @@ function init() {
       obstacleArrayFour.forEach((index) => {
         addObstacles(index) 
       })
-      // console.log('obstacle array Four', obstacleArrayFour)
     }, 300)
-    // function pauseGame() {
-    //   clearInterval(obstacleTimer)
-    //   // clearInterval(obstacleTimer)
-    // }
-    // pause.addEventListener('click', pauseGame)
   }
-
-
 
   // * OBJECTSSSSSS
   const objectClass = 'objects'
@@ -310,7 +259,6 @@ function init() {
 
       objectArrayOne = objectArrayOne.map((index) => {
         if ((index + 1) % width === 0) {
-        // console.log('here')
           return index - (width - 1)
         } else {
           return index + 1
@@ -319,13 +267,7 @@ function init() {
       objectArrayOne.forEach((index) => {
         addObjects(index) 
       })
-      // console.log('object array One', objectArrayOne)
     }, 300)
-    // function pauseGame() {
-    //   clearInterval(objectTimer)
-    //   // clearInterval(obstacleTimer)
-    // }
-    // pause.addEventListener('click', pauseGame)
   }
   function objectRowTwoTimer() {
     setInterval(() => {
@@ -335,7 +277,6 @@ function init() {
 
       objectArrayTwo = objectArrayTwo.map((index) => {
         if (index % width === 0) { 
-          // console.log('here')
           return index + (width - 1)
         } else {
           return index - 1
@@ -344,13 +285,7 @@ function init() {
       objectArrayTwo.forEach((index) => {
         addObjects(index) 
       })
-      // console.log('object array Two', objectArrayTwo)
     }, 700)
-    // function pauseGame() {
-    //   clearInterval(objectTimer)
-    //   // clearInterval(obstacleTimer)
-    // }
-    // pause.addEventListener('click', pauseGame)
   }
   function objectRowThreeTimer() {
     setInterval(() => {
@@ -360,7 +295,6 @@ function init() {
 
       objectArrayThree = objectArrayThree.map((index) => {
         if ((index + 1) % width === 0) {
-        // console.log('here')
           return index - (width - 1)
         } else {
           return index + 1
@@ -369,13 +303,7 @@ function init() {
       objectArrayThree.forEach((index) => {
         addObjects(index) 
       })
-      // console.log('object array Three', objectArrayThree)
     }, 600)
-    // function pauseGame() {
-    //   clearInterval(objectTimer)
-    //   // clearInterval(obstacleTimer)
-    // }
-    // pause.addEventListener('click', pauseGame)
   }
   function objectRowFourTimer() {
     setInterval(() => {
@@ -385,7 +313,6 @@ function init() {
 
       objectArrayFour = objectArrayFour.map((index) => {
         if (index % width === 0) { 
-          // console.log('here')
           return index + (width - 1)
         } else {
           return index - 1
@@ -394,24 +321,15 @@ function init() {
       objectArrayFour.forEach((index) => {
         addObjects(index) 
       })
-      // console.log('object array Four', objectArrayFour)
     }, 500)
-    // function pauseGame() {
-    //   clearInterval(objectTimer)
-    //   // clearInterval(obstacleTimer)
-    // }
-    // pause.addEventListener('click', pauseGame)
   }
 
-
-
+  // * GAAMEEEE
   function startGame() {
     start.classList.add('hidden')
     header.classList.remove('hidden')
     main.classList.remove('hidden')
     footer.classList.remove('hidden')
-
-
 
     obstacleRowOneTimer()
     obstacleRowTwoTimer()
@@ -421,16 +339,12 @@ function init() {
     objectRowOneTimer()
     objectRowTwoTimer()
     objectRowThreeTimer()
-    objectRowFourTimer() 
-    
-    
+    objectRowFourTimer()
   }
   function gameRules() {
-  
-
     if (lives < 1) {
-      // console.log('lives', lives)
       gameOver()
+
       // OBSTACLES
     } else if (cells[frogCurrentPosition].classList.contains('obstacles')) {
       console.log('ouch')
@@ -440,26 +354,14 @@ function init() {
       lives -= 1
       points -= 10
       console.log('points', points)
-      // OBJECTS
-    // } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) { //?&& cells[frogCurrentPosition].classList.contains('frog')) 
-    //   if (frogCurrentPosition >= 180 && frogCurrentPosition < 200) {
-    //     const frogObjectTimerFour = setInterval(() => {
-    //       console.log('WHOOOPIE')
-    //       removeFrog(frogCurrentPosition)    
-    //       frogCurrentPosition - 1
-    //       return addFrog(frogCurrentPosition)
-    //     }, 500)
-    //   } else {
-    //     console.log('try again')
-      // }
-      // console.log('safe')
-      // // SAFETYPADS
+
+      // SAFETYPADS
     } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
       removeFrog(frogCurrentPosition) 
       addFrog(frogStartPosition)
       frogCurrentPosition = 449
-      // cells[frogCurrentPosition].classList.add(frogSafeClass)
       points += 50
+
       // WATER
     } else if (cells[frogCurrentPosition].classList.contains('water')) {
       console.log('glug glug')
@@ -474,7 +376,6 @@ function init() {
   
     myPoints.innerHTML = points
     myLives.innerHTML = lives
-    
   }
   function gameOver() {
     header.classList.add('hidden')
@@ -483,16 +384,12 @@ function init() {
     finalScore.innerHTML = points
     console.log('final points', points)
     gameEnd.classList.remove('hidden')
-    // reset.classList.remove('hidden')
-    // console.log('you died dummy')
-    
   }
   function resetGame() {
     window.location.reload()
   }
 
-
-
+  // * EVENT LISTENERS AND FUNCTIONS
   resetButton.addEventListener('click', resetGame)
   startButton.addEventListener('click', startGame)
   document.addEventListener('keydown', handleKeyDown)
