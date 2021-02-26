@@ -61,7 +61,6 @@ div.player-data {
   justify-content: space-between;
   font-size: larger;
 }
-
 .grid-wrapper {
   height: 65vh;
   display: flex;
@@ -95,7 +94,6 @@ footer {
   color: whitesmoke;
 }
 .game-end {
-
   width: 600px;
   text-align: center;
   padding: 20px;
@@ -119,16 +117,18 @@ div.water-safety {
   border: solid;
   border-width: thin;
 }
+.water {
+  background-color: rgb(45, 66, 103);
+}
 div.frog.road {
   background-image: url(../assets/PinClipart.com_cute-hopping-frog-clipart_5585811.png);
   background-repeat: repeat-y;
   background-size: contain;
   background-attachment: initial;
   background-position: unset;
-  
 }
 div.road-safety  {
-  background-color: rgb(102, 138, 202);
+  background-color: rgb(127, 140, 165);
   border-radius: 7px;
   border: solid;
   border-width: thin;
