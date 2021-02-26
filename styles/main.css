@@ -1,11 +1,7 @@
 * {
   box-sizing: border-box;
 }
-/* 
-.bg-pan-left {
-	-webkit-animation: bg-pan-left 20s linear infinite both;
-	        animation: bg-pan-left 20s linear infinite both;
-} */
+
 
 body {
   height: 100vh;
@@ -60,10 +56,12 @@ p.small {
   width: 600px;
   text-align: center;
   padding: 20px;
-
+  margin: auto;
+  margin-top: 100px;
   border-width: 4px;
-  border-color: black;
+  color:rgb(52, 61, 65);
   border-style: double;
+  background-color: whitesmoke;
 }
 
 header {
@@ -77,7 +75,8 @@ header {
 }
 
 h1 {
-  font-size: 45px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 65px;
   margin-bottom: 0px;
   margin-top: 30px;
 }
@@ -115,8 +114,6 @@ div.player-data {
   display: flex;
   justify-content: center;
   align-items: center;
-  
- 
 }
 
 .grid {
@@ -201,8 +198,8 @@ div.road-safety  {
   border-width: 5px;
   border-style: solid; */
 }
-div.obstacles {
-  background-image: url(../assets/coronavirus-5107715_1920.png);
+div.obstacles.road {
+  background-image: url(../assets/coronavirus-5107715_1920.png), url(../assets/road.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: inherit;
@@ -214,7 +211,7 @@ div.objects {
   background-size: cover;
 }
 div.objects.water.frog {
-  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png), url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png), url(../assets/pngkey.com-patterns-png-920610.png)
+  background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png), url(../assets/kisspng-respirator-surgical-mask-nose-2018-01-15-mask-health-5b0c02368799a5.1293411415275136545554.png), url(../assets/pngkey.com-patterns-png-920610.png);
 }
 .frog {
   background-image: url(../assets/jing.fm-cute-frog-clipart-160942.png);
@@ -227,6 +224,7 @@ div.objects.water.frog {
 .start {
   /* background-color:: */
   font-family: 'Exo', sans-serif;
+  background-color: rgb(127 147 156);
   width: 150px;
   height: 50px;
   margin: 50px 0;
@@ -235,11 +233,13 @@ div.objects.water.frog {
 
 .reset {
   font-family: 'Exo', sans-serif;
+  background-color: rgb(127 147 156);
   width: 150px;
   height: 50px;
   margin: 50px 0;
   font-size: x-large;
 }
+
 .hidden {
   display: none;
 }
