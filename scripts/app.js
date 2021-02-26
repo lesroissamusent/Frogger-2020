@@ -355,6 +355,10 @@ function init() {
       points -= 10
       console.log('points', points)
 
+      // OBJECTS
+    } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('objects')) { 
+      console.log('safe')
+
       // SAFETYPADS
     } else if (cells[frogCurrentPosition].classList.contains('water') && cells[frogCurrentPosition].classList.contains('safety-pads')) {
       removeFrog(frogCurrentPosition) 
