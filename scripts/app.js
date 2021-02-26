@@ -215,7 +215,7 @@ function init() {
       })
 
       obstacleArrayTwo = obstacleArrayTwo.map((index) => {
-        if ((index - 1) % width === 0) { 
+        if (index % width === 0) { 
           // console.log('here')
           return index + (width - 1)
         } else {
@@ -267,7 +267,7 @@ function init() {
       })
 
       obstacleArrayFour = obstacleArrayFour.map((index) => {
-        if ((index - 1) % width === 0) { 
+        if (index % width === 0) { 
           // console.log('here')
           return index + (width - 1)
         } else {
@@ -334,7 +334,7 @@ function init() {
       })
 
       objectArrayTwo = objectArrayTwo.map((index) => {
-        if ((index - 1) % width === 0) { 
+        if (index % width === 0) { 
           // console.log('here')
           return index + (width - 1)
         } else {
@@ -384,7 +384,7 @@ function init() {
       })
 
       objectArrayFour = objectArrayFour.map((index) => {
-        if ((index - 1) % width === 0) { 
+        if (index % width === 0) { 
           // console.log('here')
           return index + (width - 1)
         } else {

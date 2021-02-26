@@ -4,11 +4,11 @@
 
 
 body {
-  height: 100vh;
+  max-height: 100vh;
   /* width: fit-content; */
   margin: 0;
   background-color: rgb(52, 61, 65);
-  align-content: center;
+  /* align-content: center; */
 
   /* font-family: 'ABeeZee', sans-serif; */
   font-family: 'Exo', sans-serif;
@@ -31,9 +31,9 @@ main {
 }
 
 .start-screen {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  /* display: flex; */
+  /* align-items: center;
+  flex-direction: column; */
   width: 600px;
   text-align: center;
   padding: 20px;
@@ -50,14 +50,14 @@ p.small {
 }
 
 .game-end {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
   width: 600px;
   text-align: center;
   padding: 20px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 180px;
   border-width: 4px;
   color:rgb(52, 61, 65);
   border-style: double;
@@ -79,6 +79,10 @@ h1 {
   font-size: 65px;
   margin-bottom: 0px;
   margin-top: 30px;
+}
+
+h2 {
+  margin-bottom: 10px;
 }
 
 div.header {
@@ -114,6 +118,8 @@ div.player-data {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid;
+  margin-top: 20px;
 }
 
 .grid {
@@ -149,7 +155,7 @@ div.player-data {
 
 footer {
   /* background-color: cornflowerblue; */
-  margin-top: 65px;
+  margin-top: 60px;
   width: 600px;
   text-align: center;
   color: whitesmoke;
@@ -202,7 +208,7 @@ div.road-safety  {
   border-style: solid; */
 }
 div.obstacles.road {
-  background-image: url(../assets/coronavirus-5107715_1920.png);
+  background-image: url(../assets/covid19_icon-002.png);
   /* background-repeat: no-repeat; */
   background-size: contain;
   background-attachment: inherit;
@@ -236,7 +242,7 @@ div.objects.water.frog {
   background-color: rgb(127 147 156);
   width: 150px;
   height: 50px;
-  margin: 50px 0;
+  margin: 30px 0;
   font-size: x-large;
   border-radius: 10px;
 
