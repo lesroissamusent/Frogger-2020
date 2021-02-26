@@ -2,7 +2,7 @@ function init() {
   // * grid
   const start = document.querySelector('.start-screen')
   const startButton = document.querySelector('.start')
-  const pause = document.querySelector('.pause')
+  // const pause = document.querySelector('.pause')
   const header = document.querySelector('header')
   const main = document.querySelector('main')
   const footer = document.querySelector('footer')
@@ -181,7 +181,7 @@ function init() {
 
   function obstacleRowOneTimer() {
     
-    const obstacleTimer = setInterval(() => {
+    setInterval(() => {
       obstacleArrayOne.forEach((index) => {
         removeObstacles(index) 
       })
@@ -201,15 +201,15 @@ function init() {
       // console.log('obstacle array One', obstacleArrayOne)
     }, 300)
 
-    function pauseGame() {
-      clearInterval(obstacleTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    // clearInterval(obstacleTimer)
+    //   // clearInterval(obstacleTimer)
+    // }
+    // // pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowTwoTimer() {
-    const obstacleTimer = setInterval(() => {
+    setInterval(() => {
       obstacleArrayTwo.forEach((index) => {
         removeObstacles(index) 
       })
@@ -227,15 +227,15 @@ function init() {
       })
       // console.log('obstacle array Two', obstacleArrayTwo)
     }, 600)
-    function pauseGame() {
-      clearInterval(obstacleTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    // clearInterval(obstacleTimer)
+    // clearInterval(obstacleTimer)
+    // }
+    // // pause.addEventListener('click', pauseGame)
   }
 
   function obstacleRowThreeTimer() {
-    const obstacleTimer = setInterval(() => {
+    setInterval(() => {
       obstacleArrayThree.forEach((index) => {
         removeObstacles(index) 
       })
@@ -253,15 +253,15 @@ function init() {
       })
       // console.log('obstacle array Three', obstacleArrayThree)
     }, 400)
-    function pauseGame() {
-      clearInterval(obstacleTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    // clearInterval(obstacleTimer)
+    // clearInterval(obstacleTimer)
   }
+  // pause.addEventListener('click', pauseGame)
+  // }
 
   function obstacleRowFourtimer() {
-    const obstacleTimer = setInterval(() => {
+    setInterval(() => {
       obstacleArrayFour.forEach((index) => {
         removeObstacles(index) 
       })
@@ -279,11 +279,11 @@ function init() {
       })
       // console.log('obstacle array Four', obstacleArrayFour)
     }, 300)
-    function pauseGame() {
-      clearInterval(obstacleTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    //   clearInterval(obstacleTimer)
+    //   // clearInterval(obstacleTimer)
+    // }
+    // pause.addEventListener('click', pauseGame)
   }
 
 
@@ -303,7 +303,7 @@ function init() {
     cells[position].classList.add(objectClass)
   }
   function objectRowOneTimer() {
-    const objectTimer = setInterval(() => {
+    setInterval(() => {
       objectArrayOne.forEach((index) => {
         removeObjects(index) 
       })
@@ -321,14 +321,14 @@ function init() {
       })
       // console.log('object array One', objectArrayOne)
     }, 300)
-    function pauseGame() {
-      clearInterval(objectTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    //   clearInterval(objectTimer)
+    //   // clearInterval(obstacleTimer)
+    // }
+    // pause.addEventListener('click', pauseGame)
   }
   function objectRowTwoTimer() {
-    const objectTimer = setInterval(() => {
+    setInterval(() => {
       objectArrayTwo.forEach((index) => {
         removeObjects(index) 
       })
@@ -346,14 +346,14 @@ function init() {
       })
       // console.log('object array Two', objectArrayTwo)
     }, 700)
-    function pauseGame() {
-      clearInterval(objectTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    //   clearInterval(objectTimer)
+    //   // clearInterval(obstacleTimer)
+    // }
+    // pause.addEventListener('click', pauseGame)
   }
   function objectRowThreeTimer() {
-    const objectTimer = setInterval(() => {
+    setInterval(() => {
       objectArrayThree.forEach((index) => {
         removeObjects(index) 
       })
@@ -371,14 +371,14 @@ function init() {
       })
       // console.log('object array Three', objectArrayThree)
     }, 600)
-    function pauseGame() {
-      clearInterval(objectTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    //   clearInterval(objectTimer)
+    //   // clearInterval(obstacleTimer)
+    // }
+    // pause.addEventListener('click', pauseGame)
   }
   function objectRowFourTimer() {
-    const objectTimer = setInterval(() => {
+    setInterval(() => {
       objectArrayFour.forEach((index) => {
         removeObjects(index) 
       })
@@ -396,11 +396,11 @@ function init() {
       })
       // console.log('object array Four', objectArrayFour)
     }, 500)
-    function pauseGame() {
-      clearInterval(objectTimer)
-      // clearInterval(obstacleTimer)
-    }
-    pause.addEventListener('click', pauseGame)
+    // function pauseGame() {
+    //   clearInterval(objectTimer)
+    //   // clearInterval(obstacleTimer)
+    // }
+    // pause.addEventListener('click', pauseGame)
   }
 
 
