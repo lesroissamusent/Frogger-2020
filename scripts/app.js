@@ -51,9 +51,9 @@ function init() {
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      // cell.textContent = i //innerText
+      // cell.textContent = i // innerText
       grid.appendChild(cell)
-      cells.push(cell) //add cells to array 'cells'
+      cells.push(cell) // add cells to array 'cells'
     }
     for (let i = 0; i < 220; i++) {
       waterCells.push(i)
