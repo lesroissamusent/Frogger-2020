@@ -4,9 +4,19 @@
 
 [Play frogger:2020](https://lesroissamusent.github.io/sei-project-one/)
 
-Table of contents: 
-
-[Brief](#planning)
+## Table of contents: 
+* [Brief](#brief)
+* [Requirements](#requirements)
+* [Timeframe](#timeframe)
+* [Technologies Used](#technologies-used)
+* [Process](#process)
+  * [Planning](#planning)
+  * [Quiz Logic](#quiz-logic)
+  * [Styling](#styling)
+  * [Challenges](#challenges)
+  * [Wins](#wins)
+* [Future Features](#future-features)
+* [Key Learnings](#key-learnings)
 
 ## Brief:
 The idea of Frogger is to guide a family of frogs across a road, and a river to their homes at the top of the screen. To make things more challenging there are numerous moving obstacles that the frogs must avoid to reach their destination.
@@ -21,7 +31,7 @@ The idea of Frogger is to guide a family of frogs across a road, and a river to 
 ## Timeframe:
 1 week
 
-## Technologies used:
+## Technologies Used:
 Javascript (ES6)
 
 HTML5
@@ -44,7 +54,7 @@ We were required to present a wireframe as well as some basic pseudocoding befor
 
 
 
-### Quiz logic
+### Quiz Logic
 
 **Creating a grid**
 ```js
@@ -238,12 +248,12 @@ function gameOver() {
 I love the end result of the styling, this was the first time I really enjoyed CSS and felt like I’d done a good job. 
 * This was my first opportunity to work at my own pace and for multiple consecutive days on the same project. I really enjoyed completing the project and knowing that I had done this all on my own. 
 
-### Future features
+## Future Features
 If I were to revisit this project, there are a few features I would want to add: 
 * A toggle at the top of the page where the player can decide whether they want the game to assist them to stay on the masks or not. 
 * A leaderboard that keeps track of highscores.  
 
-### Key learnings
+## Key Learnings
 * Completing a project from start to finish
 * Using JavaScript in a logic driven way
 * Getting more familiar with CSS
