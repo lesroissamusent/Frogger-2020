@@ -4,6 +4,10 @@
 
 [Play frogger:2020](https://lesroissamusent.github.io/sei-project-one/)
 
+Table of contents: 
+
+[Brief](#planning)
+
 ## Brief:
 The idea of Frogger is to guide a family of frogs across a road, and a river to their homes at the top of the screen. To make things more challenging there are numerous moving obstacles that the frogs must avoid to reach their destination.
 
