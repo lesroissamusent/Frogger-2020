@@ -11,7 +11,7 @@
 * [Technologies Used](#technologies-used)
 * [Process](#process)
   * [Planning](#planning)
-  * [Quiz Logic](#quiz-logic)
+  * [Game Logic](#game-logic)
   * [Styling](#styling)
   * [Challenges](#challenges)
   * [Wins](#wins)
@@ -54,7 +54,7 @@ We were required to present a wireframe as well as some basic pseudocoding befor
 
 
 
-### Quiz Logic
+### Game Logic
 
 **Creating a grid**
 ```js
