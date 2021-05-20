@@ -2,7 +2,7 @@
 ![Image](assets/Frogger_2020.gif)
 
 
-[Play frogger:2020](https://lesroissamusent.github.io/sei-project-one/)
+[Play frogger:2020](https://lesroissamusent.github.io/Frogger-2020/)
 
 ## Table of contents: 
 * [Brief](#brief)
